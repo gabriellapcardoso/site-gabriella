@@ -1,0 +1,75 @@
+@import "gabriella-cardoso-brandbook/dist/tokens/colors.css";
+@import "gabriella-cardoso-brandbook/dist/tokens/typography.css";
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFProDisplay-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFProDisplay-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFProDisplay-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFProDisplay-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFProDisplay-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFProDisplay-Heavy.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/SFProDisplay-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: var(--purple-700);
+    background-image: var(--gradient-purple);
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: var(--tracking-tight);
+  }
+  
+  ::selection {
+    background: var(--pink-500);
+    color: var(--white);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
