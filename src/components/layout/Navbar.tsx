@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Logo } from "gabriella-cardoso-brandbook";
+import { Logo } from "@/components/ui/Logo";
 
 const navItems = [
   { name: "Início", href: "#" },

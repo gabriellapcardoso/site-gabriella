@@ -1,4 +1,4 @@
-import { Logo } from "gabriella-cardoso-brandbook";
+import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   return (

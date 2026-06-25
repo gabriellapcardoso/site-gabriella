@@ -1,5 +1,4 @@
-@import "gabriella-cardoso-brandbook/dist/tokens/colors.css";
-@import "gabriella-cardoso-brandbook/dist/tokens/typography.css";
+@import "../styles/tokens.css";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
