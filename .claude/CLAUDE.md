@@ -138,10 +138,9 @@ IP `72.60.55.54` — serviços próprios rodando em Docker:
 
 ## Pendências conhecidas
 
-- [ ] **Verificar e-mail após propagação DNS** — confirmar que o e-mail `@gabriellapcardoso.com.br` continua funcionando com os MX da Hostinger via Vercel DNS (propagação iniciada em 2026-06-25, pode levar até 48h)
-- [ ] **Testar subdomínios do VPS** — após propagação DNS, confirmar acesso a n8n, portainer, evolutionapi, api, webhook
-- [ ] **`aaagencia.com.br` com parking DNS** — domínio com nameservers `hermes.dns-parking.com` / `artemis.dns-parking.com`. Tentativas via API falharam. Requer acesso manual ao painel do registrador para trocar os nameservers
-- [ ] **Links do Footer** — Instagram, LinkedIn e WhatsApp no `Footer.tsx` estão com `href="#"`. Preencher com as URLs reais das redes sociais
+- [x] ~~Verificar e-mail após propagação DNS~~ — confirmado em 2026-06-25 (MX mx1/mx2.hostinger.com propagados via Vercel DNS)
+- [x] ~~Testar subdomínios do VPS~~ — confirmado em 2026-06-25 (n8n e demais resolvendo para `72.60.55.54`)
+- [x] ~~Links do Footer~~ — resolvido em 2026-06-25 (Instagram, LinkedIn, WhatsApp e E-mail preenchidos em `Footer.tsx`)
 - [x] ~~WhatsApp na seção de contato~~ — resolvido em 2026-06-25 (`5531994822228`)
 - [x] ~~Remover arquivos de script DNS do repositório~~ — resolvido em 2026-06-25
 - [x] ~~Imagem OG ausente~~ — resolvido em 2026-06-25 (`src/app/opengraph-image.tsx`)

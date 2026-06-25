@@ -27,10 +27,10 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-8 border-t border-white/10">
           <div className="flex gap-6">
-            <a href="#" className="text-brand-200 hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="text-brand-200 hover:text-white transition-colors">LinkedIn</a>
-            <a href="#" className="text-brand-200 hover:text-white transition-colors">WhatsApp</a>
-            <a href="#" className="text-brand-200 hover:text-white transition-colors">E-mail</a>
+            <a href="https://instagram.com/gabriellapcardoso" target="_blank" rel="noopener noreferrer" className="text-brand-200 hover:text-white transition-colors">Instagram</a>
+            <a href="https://linkedin.com/in/gabriellapcardoso" target="_blank" rel="noopener noreferrer" className="text-brand-200 hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://wa.me/5531994822228" target="_blank" rel="noopener noreferrer" className="text-brand-200 hover:text-white transition-colors">WhatsApp</a>
+            <a href="mailto:gcardosomktdigital@gmail.com" className="text-brand-200 hover:text-white transition-colors">E-mail</a>
           </div>
 
           <a
