@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# site-gabriella
 
-## Getting Started
+Site pessoal de Gabriella Cardoso — landing page one-page em Next.js 14 com static export, hospedada na Vercel.
 
-First, run the development server:
+**URL**: https://gabriellapcardoso.com.br
+
+## Stack
+
+- Next.js 14 (App Router, `output: "export"`)
+- TypeScript + Tailwind CSS
+- Design system próprio: `gabriella-cardoso-brandbook` (pacote local)
+- Animações com Framer Motion
+- Fontes: SF Pro Display (local)
+
+## Desenvolvimento
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # localhost:3000
+npm run build      # gera /out estático
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> O pacote `gabriella-cardoso-brandbook` precisa estar disponível em `../gabriella-cardoso-designsystem/code` (caminho relativo configurado no `package.json`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/
+    layout.tsx        # metadata SEO global
+    page.tsx          # composição das seções
+    globals.css       # tokens, fontes, base styles
+  components/
+    layout/           # Navbar, Footer
+    sections/         # Hero, Intro, Features, Services, Authority, Pricing, FAQ, ClientsSection
+    ui/               # button, spotlight-card
+  lib/utils.ts        # cn() helper
+```
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+Deploy automático via Vercel ao fazer push na branch `main`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+DNS gerenciado pela Vercel (`ns1.vercel-dns.com` / `ns2.vercel-dns.com`). Para alterar registros DNS, use `npx vercel dns` ou o painel da Vercel — não edite via Hostinger.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Documentação completa de infraestrutura e DNS em `.claude/CLAUDE.md`.

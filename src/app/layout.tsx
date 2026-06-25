@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gabriellapcardoso.com.br"),
   title: "Gabriella Cardoso | Estratégia, Tráfego Pago e IA",
   description: "Estrategista em comunicação, tráfego pago e inteligência artificial aplicada ao crescimento de negócios, lideranças políticas e marcas.",
   keywords: ["Estratégia de Comunicação", "Tráfego Pago", "Inteligência Artificial", "Marketing Político", "Gabriella Cardoso", "Crescimento de Negócios", "Posicionamento Digital"],
@@ -11,6 +12,8 @@ export const metadata: Metadata = {
     description: "Comunicação, tráfego pago e IA para quem precisa crescer com clareza e método.",
     type: "website",
     locale: "pt_BR",
+    url: "https://gabriellapcardoso.com.br",
+    siteName: "Gabriella Cardoso",
   },
   twitter: {
     card: "summary_large_image",

@@ -8,6 +8,7 @@ import { Services } from "@/components/sections/Services";
 import { Authority } from "@/components/sections/Authority";
 import { Pricing } from "@/components/sections/Pricing";
 import { FAQ } from "@/components/sections/FAQ";
+import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Authority />
       <Pricing />
       <FAQ />
+      <Contact />
       <Footer />
     </main>
   );
