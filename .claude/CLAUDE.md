@@ -138,10 +138,12 @@ IP `72.60.55.54` — serviços próprios rodando em Docker:
 
 ## Pendências conhecidas
 
-- [ ] **Verificar e-mail após propagação DNS** — confirmar que o e-mail `@gabriellapcardoso.com.br` continua funcionando com os MX da Hostinger via Vercel DNS (propagação iniciada em 2026-06-25)
-- [ ] **Testar subdomínios do VPS** — após propagação, confirmar acesso a n8n, portainer, evolutionapi, api, webhook
-- [ ] **`aaagencia.com.br` com parking DNS** — esse domínio tem nameservers `hermes.dns-parking.com` / `artemis.dns-parking.com`. Tentativas de correção falharam (Vercel e Hostinger recusam sem zona DNS ativa). Precisa de resolução manual no painel da Hostinger/registro do domínio
+- [ ] **Verificar e-mail após propagação DNS** — confirmar que o e-mail `@gabriellapcardoso.com.br` continua funcionando com os MX da Hostinger via Vercel DNS (propagação iniciada em 2026-06-25, pode levar até 48h)
+- [ ] **Testar subdomínios do VPS** — após propagação DNS, confirmar acesso a n8n, portainer, evolutionapi, api, webhook
+- [ ] **`aaagencia.com.br` com parking DNS** — domínio com nameservers `hermes.dns-parking.com` / `artemis.dns-parking.com`. Tentativas via API falharam. Requer acesso manual ao painel do registrador para trocar os nameservers
+- [ ] **Links do Footer** — Instagram, LinkedIn e WhatsApp no `Footer.tsx` estão com `href="#"`. Preencher com as URLs reais das redes sociais
 - [x] ~~WhatsApp na seção de contato~~ — resolvido em 2026-06-25 (`5531994822228`)
 - [x] ~~Remover arquivos de script DNS do repositório~~ — resolvido em 2026-06-25
 - [x] ~~Imagem OG ausente~~ — resolvido em 2026-06-25 (`src/app/opengraph-image.tsx`)
 - [x] ~~Seção de contato ausente~~ — resolvido em 2026-06-25 (`src/components/sections/Contact.tsx`)
+- [x] ~~Dependência local `gabriella-cardoso-brandbook` quebrando build na Vercel~~ — resolvido em 2026-06-25 (tokens e Logo inlined em `src/styles/tokens.css` e `src/components/ui/Logo.tsx`)
