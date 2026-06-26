@@ -67,7 +67,8 @@ O build gera a pasta `out/` com HTML estático — não há servidor Node em pro
 ### Vercel
 
 - **Projeto**: `site-gabriella` na equipe `gabriella-cardosos-projects`
-- **Deploy**: automático via Git (branch `main`)
+- **Repositório GitHub**: `https://github.com/gabriellapcardoso/site-gabriella`
+- **Deploy**: automático via GitHub (push na branch `main` → deploy na Vercel)
 - **Domínios**: `gabriellapcardoso.com.br` e `www.gabriellapcardoso.com.br`
 
 ### DNS — gabriellapcardoso.com.br
@@ -146,3 +147,4 @@ IP `72.60.55.54` — serviços próprios rodando em Docker:
 - [x] ~~Imagem OG ausente~~ — resolvido em 2026-06-25 (`src/app/opengraph-image.tsx`)
 - [x] ~~Seção de contato ausente~~ — resolvido em 2026-06-25 (`src/components/sections/Contact.tsx`)
 - [x] ~~Dependência local `gabriella-cardoso-brandbook` quebrando build na Vercel~~ — resolvido em 2026-06-25 (tokens e Logo inlined em `src/styles/tokens.css` e `src/components/ui/Logo.tsx`)
+- [x] ~~Repositório GitHub ausente / links do footer não atualizando em produção~~ — resolvido em 2026-06-26 (repositório criado em `github.com/gabriellapcardoso/site-gabriella`, Vercel conectada via `vercel git connect`, deploy automático ativo)
