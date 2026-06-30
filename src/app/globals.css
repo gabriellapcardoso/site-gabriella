@@ -1,6 +1,46 @@
+@import "tailwindcss";
 @import "../styles/tokens.css";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+
+@theme {
+  /* Brand colors */
+  --color-brand: var(--purple-700);
+  --color-brand-deep: var(--purple-900);
+  --color-brand-light: var(--purple-500);
+
+  /* Accent colors */
+  --color-accent-pink: var(--pink-500);
+  --color-accent-lime: var(--lime-500);
+
+  /* Ink / neutral scale */
+  --color-ink-50: var(--ink-50);
+  --color-ink-100: var(--ink-100);
+  --color-ink-200: var(--ink-200);
+  --color-ink-300: var(--ink-300);
+  --color-ink-400: var(--ink-400);
+  --color-ink-500: var(--ink-500);
+  --color-ink-600: var(--ink-600);
+  --color-ink-700: var(--ink-700);
+  --color-ink-800: var(--ink-800);
+  --color-ink-900: var(--ink-900);
+  --color-ink-950: var(--ink-950);
+
+  /* Surface tokens */
+  --color-surface-page: var(--surface-page);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-surface-card: var(--surface-card);
+  --color-surface-inverse: var(--surface-inverse);
+
+  /* Typography */
+  --font-sans: "SF Pro Display", sans-serif;
+  --font-heading: "SF Pro Display", sans-serif;
+
+  /* Background images */
+  --background-image-purple-gradient: var(--gradient-purple);
+  --background-image-purple-gradient-soft: var(--gradient-purple-soft);
+}
 
 @font-face {
   font-family: "SF Pro Display";
@@ -44,10 +84,6 @@
   font-weight: 900;
   font-style: normal;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   body {

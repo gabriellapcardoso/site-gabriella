@@ -6,7 +6,7 @@ Site pessoal de Gabriella Cardoso. Landing page one-page com Next.js 14 (static 
 
 - **Framework**: Next.js 14 com App Router, modo `output: "export"` (geração estática)
 - **Linguagem**: TypeScript
-- **Estilo**: Tailwind CSS + design system próprio (`gabriella-cardoso-brandbook`)
+- **Estilo**: Tailwind CSS **v4** + design system próprio (`gabriella-cardoso-brandbook`)
 - **Animações**: Framer Motion
 - **Componentes UI**: shadcn/ui + componentes customizados
 - **Ícones**: Lucide React
@@ -14,13 +14,68 @@ Site pessoal de Gabriella Cardoso. Landing page one-page com Next.js 14 (static 
 
 ## Design System
 
-O projeto depende do pacote local `gabriella-cardoso-brandbook` em `../gabriella-cardoso-designsystem/code`. Tokens de cor (`--purple-*`, `--pink-*`, `--lime-*`, `--ink-*`) e tipografia vêm de lá via CSS custom properties. Não hardcode cores — use as variáveis do brandbook.
+Os tokens de cor estão inlined em `src/styles/tokens.css` (variáveis CSS puras). O pacote `gabriella-cardoso-brandbook` existe localmente mas não é usado em produção — os tokens foram copiados para evitar falha de build na Vercel.
+
+Não hardcode cores — use sempre as variáveis CSS do brandbook ou as classes Tailwind mapeadas abaixo.
 
 Paleta principal:
-- `brand` → roxo (`--purple-700`, `--purple-900`, `--purple-500`)
-- `accent-pink` → `--pink-500`
-- `accent-lime` → `--lime-500`
-- `ink-*` → escala de cinza/texto
+- `brand` → roxo (`--purple-700`, `--purple-900`, `--purple-500`) → classes `bg-brand`, `bg-brand-deep`, `bg-brand-light`
+- `accent-pink` → `--pink-500` → classe `bg-accent-pink`
+- `accent-lime` → `--lime-500` → classe `bg-accent-lime`
+- `ink-*` → escala de cinza/texto → classes `text-ink-*`, `bg-ink-*`
+- `surface-*` → superfícies semânticas → classes `bg-surface-page`, `bg-surface-card`, etc.
+
+## Tailwind CSS v4 — Configuração
+
+O projeto usa **Tailwind v4.3.2** com configuração CSS-first (sem `tailwind.config.ts`).
+
+### Arquivos relevantes
+
+| Arquivo | Função |
+|---|---|
+| `src/app/globals.css` | Entrada principal: imports, `@theme`, `@font-face`, `@layer base` |
+| `src/styles/tokens.css` | Variáveis CSS do design system (cores, gradientes, tipografia) |
+| `postcss.config.mjs` | Plugin `@tailwindcss/postcss` |
+| `tailwind.config.v3.ts` | Config v3 arquivada (ignorada pelo build) |
+
+### Estrutura do `globals.css`
+
+```css
+@import "tailwindcss";           /* base do Tailwind v4 */
+@import "../styles/tokens.css";  /* variáveis CSS do brandbook */
+@import "tw-animate-css";        /* utilitários de animação (já v4) */
+@import "shadcn/tailwind.css";   /* variantes shadcn (já v4) */
+
+@theme { ... }     /* tema: mapeia tokens CSS → classes Tailwind */
+@font-face { ... } /* SF Pro Display (7 pesos) */
+@layer base { ... } /* estilos globais de body, headings, :root, .dark */
+```
+
+### Como o tema funciona
+
+O bloco `@theme` em `globals.css` mapeia as variáveis do `tokens.css` para nomes de utilidades Tailwind:
+
+```css
+@theme {
+  --color-brand: var(--purple-700);      /* → bg-brand, text-brand */
+  --color-accent-pink: var(--pink-500);  /* → bg-accent-pink */
+  --color-ink-800: var(--ink-800);       /* → text-ink-800 */
+  --font-sans: "SF Pro Display", ...;    /* → font-sans */
+  --background-image-purple-gradient: var(--gradient-purple); /* → bg-purple-gradient */
+}
+```
+
+> **Nota**: valores com `var()` no `@theme` não suportam modificadores de opacidade (ex: `bg-brand/50`). Se precisar de opacidade, substitua o valor por um literal (ex: `#54007f`).
+
+### Para adicionar novas classes Tailwind customizadas
+
+Adicione no `@theme` de `globals.css`:
+```css
+@theme {
+  --color-minha-cor: var(--minha-variavel);
+}
+```
+Isso gera automaticamente `bg-minha-cor`, `text-minha-cor`, `border-minha-cor`, etc.
 
 ## Estrutura de componentes
 
@@ -29,7 +84,9 @@ src/
   app/
     layout.tsx      — metadata SEO, fonte global, html lang="pt-BR"
     page.tsx        — monta as seções na ordem da landing
-    globals.css     — imports do brandbook, @font-face SF Pro Display, variáveis base
+    globals.css     — @import tailwindcss, @theme, @font-face SF Pro Display, @layer base
+  styles/
+    tokens.css      — variáveis CSS do design system (inlined do brandbook)
   components/
     layout/
       Navbar.tsx
@@ -148,3 +205,4 @@ IP `72.60.55.54` — serviços próprios rodando em Docker:
 - [x] ~~Seção de contato ausente~~ — resolvido em 2026-06-25 (`src/components/sections/Contact.tsx`)
 - [x] ~~Dependência local `gabriella-cardoso-brandbook` quebrando build na Vercel~~ — resolvido em 2026-06-25 (tokens e Logo inlined em `src/styles/tokens.css` e `src/components/ui/Logo.tsx`)
 - [x] ~~Repositório GitHub ausente / links do footer não atualizando em produção~~ — resolvido em 2026-06-26 (repositório criado em `github.com/gabriellapcardoso/site-gabriella`, Vercel conectada via `vercel git connect`, deploy automático ativo)
+- [x] ~~Tailwind v3 → v4~~ — migrado em 2026-06-30 (`tailwindcss@4.3.2`, `@tailwindcss/postcss`, tema migrado para `@theme` em `globals.css`, `tailwind.config.ts` arquivado como `tailwind.config.v3.ts`)
