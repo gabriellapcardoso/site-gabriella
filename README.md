@@ -2,7 +2,17 @@
 
 Site pessoal de Gabriella Cardoso — landing page one-page em Next.js 14 com static export, hospedada na Vercel.
 
-**URL**: https://gabriellapcardoso.com.br
+> **Atenção (2026-11-14): este repositório não serve mais `gabriellapcardoso.com.br`.**
+> O site no ar é uma página estática nova, feita com a skill `mestre-dos-sites` e publicada no projeto
+> Vercel `gabriella-cardoso-site`. Este código (Next.js) é a **versão anterior**: continua intacto e
+> funcionando em https://site-gabriella-lyart.vercel.app, e serve de plano de volta.
+> **Um push na `main` daqui não muda o site do domínio.**
+>
+> - Como o site no ar é feito, publicado e revertido: `~/AI/sites-melhorados/gabriellapcardoso-com-br/COMO-PUBLICAR.md`
+> - Infraestrutura, DNS e histórico: [`.claude/CLAUDE.md`](.claude/CLAUDE.md)
+
+**URL do site no ar**: https://gabriellapcardoso.com.br
+**URL desta versão (Next.js)**: https://site-gabriella-lyart.vercel.app
 
 ## Stack
 
@@ -40,7 +50,8 @@ src/
 
 ## Deploy
 
-Deploy automático via Vercel ao fazer push na branch `main`.
+Deploy automático via Vercel ao fazer push na branch `main` — **atualiza só `site-gabriella-lyart.vercel.app`**
+(o domínio foi movido para o projeto `gabriella-cardoso-site` em 2026-11-14).
 
 DNS gerenciado pela Vercel (`ns1.vercel-dns.com` / `ns2.vercel-dns.com`). Para alterar registros DNS, use `npx vercel dns` ou o painel da Vercel — não edite via Hostinger.
 

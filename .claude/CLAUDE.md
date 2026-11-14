@@ -2,6 +2,13 @@
 
 Site pessoal de Gabriella Cardoso. Landing page one-page com Next.js 14 (static export) hospedada na Vercel.
 
+> **STATUS ATUAL (2026-11-14): o domínio `gabriellapcardoso.com.br` NÃO é mais servido por este projeto.**
+> O site no ar é um site estático novo, gerado pela skill `mestre-dos-sites` e publicado no projeto
+> Vercel `gabriella-cardoso-site`. Este repositório (Next.js) continua intacto, como versão anterior
+> e plano de volta. **Pushes na `main` deste repositório não alteram mais o domínio.**
+> Como o site no ar é feito e publicado: `~/AI/sites-melhorados/gabriellapcardoso-com-br/COMO-PUBLICAR.md`.
+> Resumo e histórico da troca: seções "Site no ar" e "Histórico" abaixo.
+
 ## Stack
 
 - **Framework**: Next.js 14 com App Router, modo `output: "export"` (geração estática)
@@ -119,14 +126,69 @@ O build gera a pasta `out/` com HTML estático — não há servidor Node em pro
 
 ---
 
+## Site no ar (desde 2026-11-14)
+
+| Item | Valor |
+|---|---|
+| Domínio | `gabriellapcardoso.com.br` (o `www` redireciona para ele) |
+| Projeto Vercel | `gabriella-cardoso-site` (`prj_bptEeO2hDXXaeh75cvaIoDV8bgoz`) |
+| Endereço da Vercel | `gabriella-cardoso-site.vercel.app` |
+| Tipo | HTML estático de uma página, sem build, **sem repositório GitHub e sem deploy automático** |
+| Fonte do conteúdo | `~/AI/sites-melhorados/gabriellapcardoso-com-br/site.json` |
+| Montagem | skill `mestre-dos-sites` (`~/.claude/skills/mestre-dos-sites/`) |
+| Publicação | manual, por `vercel deploy --prod` (comando completo em `COMO-PUBLICAR.md`) |
+
+Como o domínio foi movido: o domínio estava no projeto `site-gabriella`. Em vez de colar o site novo
+por cima (o que mudaria as configurações do app Next.js e seria sobrescrito no próximo push do
+GitHub), foi criado o projeto `gabriella-cardoso-site` e o domínio foi movido para ele pela API:
+`POST /v1/projects/{id do site-gabriella}/domains/gabriellapcardoso.com.br/move` com
+`projectId` = id do projeto novo. O projeto `site-gabriella` **não foi alterado**.
+
+O que mudou para o visitante: sai o site Next.js; entra uma página com abertura em tom "cinema" (foto
+recortada), peças animadas (órbita de método, linha do tempo de formas de trabalho), citação, seções
+de serviços, trajetória e contato. Todo o texto veio do site antigo. Ficaram de fora a faixa de
+clientes (nomes fictícios: Acme Corp, Global Tech, Command Systems, Shield Security, Zap Energy,
+Sparkles AI) e quatro das cinco perguntas do FAQ (abriam sem resposta no site antigo).
+
+### Voltar ao site anterior
+
+O `site-gabriella` continua com o último deploy de produção no ar em
+`site-gabriella-lyart.vercel.app` (conferido em 2026-11-14, responde 200). Para devolver o domínio:
+mover de volta com o mesmo endpoint, trocando origem e destino (comando em `COMO-PUBLICAR.md`).
+A ida foi testada; a volta não. Se voltar a ele, tirar a faixa de clientes fictícios.
+
+### Favicon
+
+`monograma-roxo.svg` do design system (com versão branca em tema escuro) + PNGs de apoio para Safari
+e iPhone. Detalhes em `COMO-PUBLICAR.md`.
+
+### Compartilhamento (Open Graph)
+
+O site antigo tinha `opengraph-image.tsx`; o novo ficou sem imagem de compartilhamento até 2026-11-14,
+quando foram ligadas as tags `og:*`, `twitter:*` e `canonical` com a imagem `img/og.jpg`
+(1200×630, ~150 KB). Detalhes e como trocar a imagem em `COMO-PUBLICAR.md`.
+
+### Indexação no Google
+
+- Propriedade **Domínio** `gabriellapcardoso.com.br` no Google Search Console, verificada em
+  2026-11-14 por registro TXT na raiz do DNS (ver tabela de DNS). **Não apagar esse TXT.**
+- O site novo sai **sem** `noindex` (`"previa": false`). Indexação da página inicial solicitada em
+  2026-11-14; no momento do pedido o Google ainda guardava a versão antiga.
+- Não há `sitemap.xml` nem `robots.txt`.
+
+---
+
 ## Infraestrutura e Deploy
 
 ### Vercel
 
 - **Projeto**: `site-gabriella` na equipe `gabriella-cardosos-projects`
 - **Repositório GitHub**: `https://github.com/gabriellapcardoso/site-gabriella`
-- **Deploy**: automático via GitHub (push na branch `main` → deploy na Vercel)
-- **Domínios**: `gabriellapcardoso.com.br` e `www.gabriellapcardoso.com.br`
+- **Deploy**: automático via GitHub (push na branch `main` → deploy na Vercel). **Desde 2026-11-14
+  isso só atualiza `site-gabriella-lyart.vercel.app`; o domínio foi movido para o projeto
+  `gabriella-cardoso-site`.**
+- **Domínios**: até 2026-11-13 o projeto tinha `gabriellapcardoso.com.br` (o `www` era atendido pelo
+  wildcard `*` do DNS, não era domínio do projeto). Hoje só resta `site-gabriella-lyart.vercel.app`.
 
 ### DNS — gabriellapcardoso.com.br
 
@@ -136,12 +198,12 @@ A Vercel gerencia o DNS completo do domínio. Todos os registros estão no paine
 
 | Subdomínio | Tipo | Destino | Finalidade |
 |---|---|---|---|
-| `@` | ALIAS | `b37e53686b1f3ee2.vercel-dns-017.com` | Site principal |
-| `*` | ALIAS | `cname.vercel-dns-017.com.` | Wildcard Vercel |
-| `www` | CNAME | `cname.vercel-dns.com.` | www → Vercel |
+| `@` | ALIAS | `e13f4ab36accade2.vercel-dns-017.com` (valor gerenciado pela Vercel; muda sozinho, mudou na troca de 2026-11-14) | Site principal |
+| `*` | ALIAS | `cname.vercel-dns-017.com.` | Wildcard Vercel (atende o `www`, que redireciona para o domínio principal) |
 | `@` | MX 5 | `mx1.hostinger.com.` | E-mail |
 | `@` | MX 10 | `mx2.hostinger.com.` | E-mail |
 | `@` | TXT | `v=spf1 include:_spf.mail.hostinger.com ~all` | SPF |
+| `@` | TXT | `google-site-verification=...` (registro `rec_fa0a9fca1f3320b5aceddce5`, criado em 2026-11-14) | Verificação do Google Search Console. **Não apagar** |
 | `_dmarc` | TXT | `v=DMARC1; p=none` | DMARC |
 | `hostingermail-a._domainkey` | CNAME | `hostingermail-a.dkim.mail.hostinger.com` | DKIM |
 | `hostingermail-b._domainkey` | CNAME | `hostingermail-b.dkim.mail.hostinger.com` | DKIM |
@@ -192,9 +254,42 @@ IP `72.60.55.54` — serviços próprios rodando em Docker:
 3. Nameservers atualizados para `ns1.vercel-dns.com` / `ns2.vercel-dns.com` via API da Hostinger
 4. SSL provisionado automaticamente pela Vercel após propagação DNS (até 48h)
 
+### 2026-11-14 — Troca do site no domínio e registro no Google (mudança planejada)
+
+1. Site novo montado com a skill `mestre-dos-sites` a partir do conteúdo do site antigo; foto
+   profissional da Gabriella recortada para a abertura; faixa "Prévia de proposta" removida por o
+   site ser dela.
+2. Ajustes pedidos e feitos: palavra gigante "decisão" removida da abertura; botão de CTA na
+   primeira dobra (celular e computador); foto da abertura ampliada; foto da seção Trajetória
+   reenquadrada (cortava os olhos); botão da seção Estratégia invisível (roxo sobre roxo) corrigido.
+3. Publicado no projeto novo `gabriella-cardoso-site`; conferido no endereço da Vercel (HTML com o
+   mesmo hash do build local); domínio movido para ele; conferido no domínio (HTTP 200, certificado
+   válido, `www` e `http` redirecionando para `https://gabriellapcardoso.com.br/`).
+4. Favicon ligado (monograma roxo do design system). O montador da skill ganhou o campo `favicon`.
+5. `noindex` removido: o montador da skill colocava `noindex` sempre; agora omite quando
+   `"previa": false`. Republicado.
+6. Search Console: propriedade Domínio criada e verificada por TXT no DNS (criado pela API da Vercel
+   após liberação da usuária); indexação da página inicial solicitada.
+
+7. Imagem de compartilhamento criada e tags Open Graph/Twitter/canonical ligadas (o site novo tinha
+   perdido o `opengraph-image.tsx` do antigo). O montador da skill ganhou os campos `url` e `og`.
+
+Não verificado nessa data: teste em celular real; rastreamento do site novo pelo Google; aparência da
+prévia do link dentro do WhatsApp e do LinkedIn.
+
 ---
 
 ## Pendências conhecidas
+
+### Abertas (2026-11-14)
+
+- [ ] **~2026-11-17:** conferir no Search Console (Inspeção de URL) se o Google já rastreou o site novo.
+- [ ] Conferir a prévia do link no WhatsApp e no LinkedIn (tags e imagem no ar desde 2026-11-14; a aparência nos apps não foi vista).
+- [ ] Testar o site novo em celular de verdade.
+- [ ] Ativar verificação em duas etapas na conta Vercel (só o dono faz).
+- [ ] `sitemap.xml` e `robots.txt`, se o site crescer.
+
+### Resolvidas
 
 - [x] ~~Verificar e-mail após propagação DNS~~ — confirmado em 2026-06-25 (MX mx1/mx2.hostinger.com propagados via Vercel DNS)
 - [x] ~~Testar subdomínios do VPS~~ — confirmado em 2026-06-25 (n8n e demais resolvendo para `72.60.55.54`)
