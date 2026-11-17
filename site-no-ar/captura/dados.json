@@ -1,0 +1,896 @@
+{
+ "url": "https://gabriellapcardoso.com.br/",
+ "titulo": "Gabriella Cardoso | Estratégia, Tráfego Pago e IA",
+ "descricao": "Estrategista em comunicação, tráfego pago e inteligência artificial aplicada ao crescimento de negócios, lideranças políticas e marcas.",
+ "nome_do_site": "Gabriella Cardoso",
+ "logo_alt": "",
+ "idioma": "pt-BR",
+ "blocos": [
+  {
+   "tag": "botao",
+   "t": "Gabriella Cardoso.",
+   "y": 26,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Início",
+   "y": 28,
+   "zona": "menu"
+  },
+  {
+   "tag": "li",
+   "t": "Sobre",
+   "y": 28,
+   "zona": "menu"
+  },
+  {
+   "tag": "li",
+   "t": "Estratégia",
+   "y": 28,
+   "zona": "menu"
+  },
+  {
+   "tag": "li",
+   "t": "Serviços",
+   "y": 28,
+   "zona": "menu"
+  },
+  {
+   "tag": "li",
+   "t": "Autoridade",
+   "y": 28,
+   "zona": "menu"
+  },
+  {
+   "tag": "li",
+   "t": "FAQ",
+   "y": 28,
+   "zona": "menu"
+  },
+  {
+   "tag": "li",
+   "t": "Contato",
+   "y": 28,
+   "zona": "menu"
+  },
+  {
+   "tag": "botao",
+   "t": "Falar com Gabriella",
+   "y": 20,
+   "zona": "menu"
+  },
+  {
+   "tag": "p",
+   "t": "AUTORIDADE ESTRATÉGICA",
+   "y": 139,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h1",
+   "t": "Comunicação, tráfego e IA para transformar presença digital em decisão estratégica.",
+   "y": 193,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Eu ajudo negócios, marcas, lideranças públicas e campanhas a saírem do improviso e construírem comunicação com método, dados, posicionamento e execução.",
+   "y": 532,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Quero uma análise estratégica",
+   "y": 661,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Conhecer minha atuação",
+   "y": 661,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "PERFORMANCE",
+   "y": 230,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Crescimento com Método",
+   "y": 250,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "POSICIONAMENTO",
+   "y": 405,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Leitura de Território",
+   "y": 425,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "AUTOMAÇÃO",
+   "y": 580,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Inteligência Artificial",
+   "y": 600,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "MARCAS E LIDERANÇAS QUE CONFIAM NO MÉTODO",
+   "y": 875,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Acme Corp",
+   "y": 935,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Global Tech",
+   "y": 935,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Command Systems",
+   "y": 935,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Shield Security",
+   "y": 935,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Zap Energy",
+   "y": 935,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Sparkles AI",
+   "y": 935,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h2",
+   "t": "Antes de anunciar, vender ou aparecer, é preciso entender o contexto.",
+   "y": 1158,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Minha trajetória começou na política, dentro da rotina real de mandatos, campanhas, assessoria parlamentar, eventos, produção de conteúdo e comunicação pública. Essa vivência formou uma visão prática: comunicação não começa no anúncio. Começa na leitura do público, do território, da reputação, da narrativa e do objetivo.",
+   "y": 1370,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Hoje, conecto estratégia de comunicação, tráfego pago, inteligência de dados, automação e IA para transformar decisões soltas em crescimento com método.",
+   "y": 1370,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Estratégia de comunicação",
+   "y": 1853,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Posicionamento, narrativa, percepção pública, conteúdo e distribuição de mensagem para marcas, lideranças e campanhas que precisam comunicar com clareza.",
+   "y": 1901,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Tráfego pago com inteligência",
+   "y": 1853,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Planejamento, segmentação, campanhas, métricas e leitura de performance para transformar investimento em alcance, conversas, reconhecimento e oportunidade real.",
+   "y": 1901,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "IA aplicada ao crescimento",
+   "y": 1853,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Automação, análise, conteúdo, fluxos inteligentes e uso prático de inteligência artificial para acelerar decisões e reduzir achismo.",
+   "y": 1901,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h2",
+   "t": "Como posso ajudar",
+   "y": 2247,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Soluções estratégicas desenhadas para cada contexto.",
+   "y": 2311,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Estratégia para lideranças públicas e campanhas",
+   "y": 2447,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Políticos, mandatos, pré-candidatos, equipes de campanha e lideranças públicas.",
+   "y": 2515,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Posicionamento digital",
+   "y": 2619,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Comunicação de mandato",
+   "y": 2659,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Tráfego político-eleitoral",
+   "y": 2699,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Distribuição estratégica de mensagens",
+   "y": 2739,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Leitura de território e público",
+   "y": 2779,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Planejamento de conteúdo",
+   "y": 2819,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Dados para decisão",
+   "y": 2859,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Tráfego pago para negócios e marcas locais",
+   "y": 2447,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Negócios locais, prestadores de serviços e empresas.",
+   "y": 2515,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Campanhas para WhatsApp",
+   "y": 2599,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Geração de leads",
+   "y": 2639,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Captação de clientes",
+   "y": 2679,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Reconhecimento de marca",
+   "y": 2719,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Anúncios com estratégia",
+   "y": 2759,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Análise de métricas e otimização",
+   "y": 2799,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Inteligência artificial para marketing e operação",
+   "y": 2447,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Equipes, agências, empreendedores e lideranças.",
+   "y": 2515,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Automação de processos",
+   "y": 2599,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "IA para conteúdo",
+   "y": 2639,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "IA para análise de dados",
+   "y": 2679,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Agentes e assistentes personalizados",
+   "y": 2719,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Fluxos de trabalho com IA",
+   "y": 2759,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Estratégia prática, sem hype",
+   "y": 2799,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h2",
+   "t": "Experiência construída na operação real",
+   "y": 3103,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Atuação em marketing político desde 2015",
+   "y": 3215,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Experiência com mandatos, campanhas e comunicação pública",
+   "y": 3267,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Liderança em estratégia de marketing e comunicação",
+   "y": 3347,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Integração entre tráfego pago, conteúdo, dados e IA",
+   "y": 3399,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Atuação com políticos, negócios locais, marcas, empreendedores e equipes",
+   "y": 3451,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Visão estratégica que une execução, análise e decisão",
+   "y": 3531,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h2",
+   "t": "Tráfego pago não corrige comunicação fraca. IA não substitui estratégia. Crescimento exige contexto, método e execução.",
+   "y": 3226,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Gabriella Cardoso",
+   "y": 3470,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Estrategista",
+   "y": 3497,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h2",
+   "t": "Formas de trabalho",
+   "y": 3796,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Escolha o modelo ideal para o seu momento.",
+   "y": 3860,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Diagnóstico Estratégico",
+   "y": 4004,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Para quem precisa entender gargalos antes de investir mais.",
+   "y": 4048,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Análise de posicionamento",
+   "y": 4120,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Leitura de presença digital",
+   "y": 4160,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Diagnóstico de comunicação e tráfego",
+   "y": 4200,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Recomendações práticas de melhoria",
+   "y": 4240,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Solicitar diagnóstico",
+   "y": 4384,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Consultoria Estratégica",
+   "y": 4004,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Para negócios, lideranças e equipes que precisam de direção contínua.",
+   "y": 4048,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Planejamento de comunicação",
+   "y": 4120,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Estratégia de tráfego",
+   "y": 4160,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "IA aplicada à rotina",
+   "y": 4200,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Acompanhamento de métricas",
+   "y": 4240,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Priorização de ações",
+   "y": 4280,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Conversar sobre consultoria",
+   "y": 4384,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h3",
+   "t": "Projeto Personalizado",
+   "y": 4004,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Para campanhas, mandatos, marcas e operações que precisam de estrutura completa.",
+   "y": 4048,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Estratégia integrada",
+   "y": 4120,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Tráfego pago",
+   "y": 4160,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Conteúdo e posicionamento",
+   "y": 4200,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Inteligência de dados",
+   "y": 4240,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Automações e IA",
+   "y": 4280,
+   "zona": "corpo"
+  },
+  {
+   "tag": "li",
+   "t": "Plano de execução",
+   "y": 4320,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Montar projeto",
+   "y": 4384,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h2",
+   "t": "Perguntas Frequentes",
+   "y": 4664,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Você trabalha apenas com política?",
+   "y": 4768,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Não. Minha trajetória começou e se consolidou na política, mas minha atuação hoje conecta comunicação, tráfego pago, dados e IA para campanhas, mandatos, negócios locais, marcas e lideranças.",
+   "y": 4844,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Você faz apenas gestão de tráfego?",
+   "y": 4936,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "IA substitui a estratégia de marketing?",
+   "y": 5032,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Para quem seu trabalho é indicado?",
+   "y": 5128,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Como começa o processo?",
+   "y": 5224,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "VAMOS CONVERSAR",
+   "y": 5504,
+   "zona": "corpo"
+  },
+  {
+   "tag": "h2",
+   "t": "O primeiro passo é uma conversa.",
+   "y": 5558,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Conta o que você precisa. A gente descobre juntos qual é o caminho.",
+   "y": 5670,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Conversar no WhatsApp",
+   "y": 5756,
+   "zona": "corpo"
+  },
+  {
+   "tag": "botao",
+   "t": "Enviar e-mail",
+   "y": 5756,
+   "zona": "corpo"
+  },
+  {
+   "tag": "p",
+   "t": "Estratégia de Comunicação · Tráfego Pago · Inteligência Artificial",
+   "y": 6017,
+   "zona": "rodape"
+  },
+  {
+   "tag": "botao",
+   "t": "Instagram",
+   "y": 6128,
+   "zona": "rodape"
+  },
+  {
+   "tag": "botao",
+   "t": "LinkedIn",
+   "y": 6128,
+   "zona": "rodape"
+  },
+  {
+   "tag": "botao",
+   "t": "WhatsApp",
+   "y": 6128,
+   "zona": "rodape"
+  },
+  {
+   "tag": "botao",
+   "t": "E-mail",
+   "y": 6128,
+   "zona": "rodape"
+  }
+ ],
+ "sombras": [],
+ "imgs": [
+  {
+   "src": "https://gabriellapcardoso.com.br/opengraph-image?218d990ce77e9e49",
+   "maior": "",
+   "w": 0,
+   "h": 0,
+   "rw": 1200,
+   "rh": 630,
+   "alt": "imagem de compartilhamento",
+   "y": 99999,
+   "logo": false,
+   "svg": false,
+   "arquivo": "",
+   "zona": "og",
+   "contexto": "",
+   "legenda": "",
+   "fundo": false
+  }
+ ],
+ "cores": {
+  "fundo": "#54007f",
+  "fundos": [
+   "#54007f",
+   "#ffffff",
+   "#350052",
+   "#f7f6fa"
+  ],
+  "texto": "#5e5470",
+  "destaques": [
+   "#bff208",
+   "#54007f"
+  ],
+  "escuro": true
+ },
+ "fontes": {
+  "titulos": "SF Pro Display",
+  "texto": "SF Pro Display",
+  "quantas": 1
+ },
+ "contatos": {
+  "whatsapp": [
+   "https://wa.me/5531994822228"
+  ],
+  "telefone_links": [],
+  "telefones": [],
+  "email": [
+   "gcardosomktdigital@gmail.com"
+  ],
+  "instagram": [
+   "https://instagram.com/gabriellapcardoso"
+  ],
+  "facebook": [],
+  "youtube": [],
+  "linkedin": [
+   "https://linkedin.com/in/gabriellapcardoso"
+  ],
+  "tiktok": [],
+  "agendar": [],
+  "mapa_link": [],
+  "mapa_iframe": [],
+  "videos": [],
+  "endereco": [],
+  "horario": [],
+  "registro": [],
+  "avaliacao": [],
+  "produto": []
+ },
+ "botoes": [
+  {
+   "t": "Falar com Gabriella",
+   "h": "https://gabriellapcardoso.com.br/#contato"
+  },
+  {
+   "t": "Quero uma análise estratégica",
+   "h": "https://gabriellapcardoso.com.br/#contato"
+  },
+  {
+   "t": "Conversar no WhatsApp",
+   "h": "https://wa.me/5531994822228"
+  }
+ ],
+ "menu": [
+  {
+   "t": "Gabriella Cardoso.",
+   "h": "https://gabriellapcardoso.com.br/#",
+   "sub": false
+  },
+  {
+   "t": "Início",
+   "h": "https://gabriellapcardoso.com.br/#",
+   "sub": false
+  },
+  {
+   "t": "Sobre",
+   "h": "https://gabriellapcardoso.com.br/#sobre",
+   "sub": false
+  },
+  {
+   "t": "Estratégia",
+   "h": "https://gabriellapcardoso.com.br/#estrategia",
+   "sub": false
+  },
+  {
+   "t": "Serviços",
+   "h": "https://gabriellapcardoso.com.br/#servicos",
+   "sub": false
+  },
+  {
+   "t": "Autoridade",
+   "h": "https://gabriellapcardoso.com.br/#autoridade",
+   "sub": false
+  },
+  {
+   "t": "FAQ",
+   "h": "https://gabriellapcardoso.com.br/#faq",
+   "sub": false
+  },
+  {
+   "t": "Contato",
+   "h": "https://gabriellapcardoso.com.br/#contato",
+   "sub": false
+  },
+  {
+   "t": "Falar com Gabriella",
+   "h": "https://gabriellapcardoso.com.br/#contato",
+   "sub": false
+  }
+ ],
+ "medidas": {
+  "viewport": true,
+  "https": true,
+  "palavras": 654,
+  "h1": 1,
+  "imagens": 0,
+  "quebradas": 0,
+  "semAlt": 0,
+  "naDobra": 1,
+  "pequenos": 0,
+  "ano": "",
+  "tabelas": 0,
+  "formulario": 0,
+  "altura": 6226,
+  "estoura": false,
+  "videoDeFundo": 0,
+  "spam": 0,
+  "plataforma": ""
+ },
+ "celular": {
+  "estoura": false,
+  "pequenos": 0
+ },
+ "tempo_abrir_s": 16.88,
+ "problemas": [
+  "Demorou 16,9 s para abrir."
+ ],
+ "paleta": {
+  "tema": "escuro",
+  "base": "#bff208",
+  "css": ":root{ --cor:#bff00f; --cor-forte:#23122b; --cor-suave:#26172e; --fundo:#130b17; --papel:#1e1223; --tinta:#f3f0f4; --tinta-suave:#b0a7b4; --sobre-cor:#181b0e }"
+ },
+ "logo": null,
+ "fotos": [
+  {
+   "src": "https://gabriellapcardoso.com.br/opengraph-image?218d990ce77e9e49",
+   "maior": "",
+   "w": 1200,
+   "h": 630,
+   "rw": 1200,
+   "rh": 630,
+   "alt": "imagem de compartilhamento",
+   "y": 99999,
+   "logo": false,
+   "svg": false,
+   "arquivo": "img/foto-01.jpg",
+   "zona": "og",
+   "contexto": "",
+   "legenda": "",
+   "fundo": false,
+   "tipo": "image/jpeg",
+   "veio": "https://gabriellapcardoso.com.br/opengraph-image?218d990ce77e9e49",
+   "ow": 1200,
+   "oh": 630,
+   "alfa": false,
+   "luz": 31,
+   "contraste": 138,
+   "formato": "panorâmica"
+  }
+ ],
+ "vizinhas": []
+}

@@ -1,0 +1,4 @@
+/* Tom direto: par de fontes e ajustes de desenho. Carregue depois do mestre.css. */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{--titulo:"Sora",system-ui,sans-serif;--texto:"Inter",system-ui,sans-serif;--peso-titulo:600;--aperto:-.035em;--raio:16px}
+h1 em,h2 em{font-style:normal}.m-corre span,.m-cartao .m-num{font-style:normal}h1{font-size:clamp(36px,5vw,68px)}

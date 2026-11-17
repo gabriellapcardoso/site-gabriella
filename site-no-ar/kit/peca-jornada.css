@@ -1,0 +1,177 @@
+/* Peça jornada · a explicação do serviço como cena fixa na rolagem. Tudo aqui começa por .p-jornada.
+   Padrão (celular, foto da página pronta, menos movimento): blocos empilhados com foto e texto.
+   Computador com tela alta: a cena fica presa enquanto se rola e as etapas trocam (bloco @media no fim). */
+.p-jornada{
+  --pj-n:4; --pj-topo:74px;
+  --pj-acento:var(--cor-2,color-mix(in srgb,var(--cor) 55%,#fff));
+  --pj-claro:color-mix(in srgb,#fff 94%,var(--pj-acento));
+  --pj-texto:color-mix(in srgb,#fff 70%,transparent);
+  --pj-apagado:color-mix(in srgb,#fff 34%,transparent);
+  --pj-linha:color-mix(in srgb,#fff 14%,transparent);
+  --pj-ease:cubic-bezier(.65,0,.25,1);
+  position:relative;isolation:isolate;overflow-x:clip;color:var(--pj-claro);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--cor-forte) 82%,#000) 0%,var(--cor-forte) 22%,var(--cor-forte) 78%,color-mix(in srgb,var(--cor-forte) 86%,#000) 100%)}
+.m-secao.p-jornada{padding:0}
+/* grão de filme por cima de tudo */
+.p-jornada::after{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;opacity:.11;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.6 -.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
+
+/* palco: luz quente atrás da cena */
+.p-jornada-palco{position:relative;padding:clamp(76px,10vw,128px) 0 0}
+.p-jornada-palco::before{content:"";position:absolute;inset:0 0 -60vh;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(#000 45%,transparent);mask-image:linear-gradient(#000 45%,transparent);
+  background:radial-gradient(52% 60% at 76% 46%,color-mix(in srgb,var(--cor) 30%,transparent),transparent 72%),
+             radial-gradient(40% 46% at 6% 92%,color-mix(in srgb,var(--pj-acento) 10%,transparent),transparent 70%)}
+
+/* texto da esquerda */
+.p-jornada-olho{display:inline-flex;align-items:center;gap:12px;font:600 12px/1.4 var(--texto);letter-spacing:.2em;text-transform:uppercase;color:var(--pj-acento);text-wrap:balance}
+.p-jornada-olho::before{content:"";width:28px;height:1px;background:currentColor;flex:none}
+.p-jornada h2{font-family:var(--titulo);font-weight:var(--peso-titulo,700);letter-spacing:var(--aperto,-.03em);font-size:clamp(31px,3.25vw,50px);line-height:1.06;color:var(--pj-claro);margin:20px 0 18px;max-width:14.5em;text-wrap:balance}
+.p-jornada h2 em{position:relative;font-style:normal;color:var(--pj-acento);white-space:nowrap}
+.p-jornada-traco{position:absolute;left:-2%;bottom:-.2em;width:104%;height:.3em;overflow:visible}
+.p-jornada-traco path{fill:none;stroke:var(--pj-acento);stroke-width:2.2;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s var(--pj-ease) .7s}
+.p-jornada h2.pj-visivel .p-jornada-traco path{stroke-dashoffset:0}
+.p-jornada-sub{font-size:clamp(16px,1.2vw,18px);line-height:1.6;color:var(--pj-texto);max-width:31em}
+.p-jornada-sub em{font-style:normal;color:var(--pj-claro)}
+
+/* lista de etapas (só na cena) */
+.p-jornada-lista{display:none;position:relative;margin:clamp(22px,3.4vh,36px) 0 clamp(22px,3.4vh,34px);padding-left:36px}
+.p-jornada-lista ol{list-style:none;display:grid}
+.p-jornada-fio{position:absolute;left:7px;top:var(--pj-a,22px);height:calc(var(--pj-b,200px) - var(--pj-a,22px));width:1px;background:var(--pj-linha)}
+.p-jornada-fio i{position:absolute;left:0;top:0;width:1px;height:calc(var(--pj-y,22px) - var(--pj-a,22px));background:linear-gradient(180deg,color-mix(in srgb,var(--pj-acento) 40%,transparent),var(--pj-acento));transition:height .8s var(--pj-ease)}
+.p-jornada-ponto{position:absolute;left:7px;top:0;width:13px;height:13px;margin:-6.5px 0 0 -6px;border-radius:50%;background:var(--pj-acento);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--pj-acento) 20%,transparent),0 0 26px 2px color-mix(in srgb,var(--pj-acento) 55%,transparent);transform:translateY(var(--pj-y,22px));transition:transform .8s var(--pj-ease)}
+.p-jornada-lista button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:40px minmax(0,1fr);align-items:baseline;width:100%;padding:clamp(8px,1.35vh,13px) 0;-webkit-tap-highlight-color:transparent}
+.p-jornada-lista button:focus-visible{outline:2px solid var(--pj-acento);outline-offset:4px;border-radius:8px}
+.p-jornada-num{font:600 12px/1 var(--texto);letter-spacing:.08em;color:var(--pj-apagado);font-variant-numeric:tabular-nums;transition:color .5s}
+.p-jornada-nome{font:var(--peso-titulo,700) clamp(18px,1.5vw,23px)/1.15 var(--titulo);letter-spacing:-.02em;color:var(--pj-apagado);transition:color .5s,transform .7s var(--pj-ease);transform-origin:left center}
+.p-jornada-lista small{grid-column:2;font:600 10.5px/1.3 var(--texto);letter-spacing:.2em;text-transform:uppercase;color:var(--pj-apagado);margin-top:7px;transition:color .5s,transform .7s var(--pj-ease)}
+.p-jornada-barra{grid-column:2;display:block;width:min(210px,80%);height:1px;margin-top:11px;opacity:0;transition:opacity .4s,transform .7s var(--pj-ease);
+  background:linear-gradient(90deg,var(--pj-acento) calc(var(--pj-sub,0) * 100%),var(--pj-linha) 0)}
+.p-jornada-lista li.passou .p-jornada-nome{color:color-mix(in srgb,#fff 52%,transparent)}
+.p-jornada-lista li.ativa .p-jornada-nome{color:var(--pj-claro)}
+.p-jornada-lista li.ativa .p-jornada-nome,.p-jornada-lista li.ativa small,.p-jornada-lista li.ativa .p-jornada-barra{transform:translateX(8px)}
+.p-jornada-lista li.ativa .p-jornada-num,.p-jornada-lista li.ativa small{color:var(--pj-acento)}
+.p-jornada-lista li.ativa .p-jornada-barra{opacity:1}
+.p-jornada-lista li:not(.ativa) button:hover .p-jornada-nome{color:color-mix(in srgb,#fff 78%,transparent)}
+.p-jornada-acoes{margin-top:4px}
+.p-jornada .m-botao{box-shadow:0 18px 40px -18px color-mix(in srgb,var(--cor) 80%,#000)}
+
+/* quadro da direita (só na cena) */
+.p-jornada-arte{display:none;position:relative}
+.p-jornada-quadro{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:color-mix(in srgb,var(--cor-forte) 70%,#000);
+  box-shadow:0 50px 90px -40px rgba(0,0,0,.75),0 0 0 1px color-mix(in srgb,#fff 8%,transparent)}
+.p-jornada-quadro::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,transparent 22%,transparent 46%,color-mix(in srgb,var(--cor-forte) 70%,transparent) 100%)}
+/* fio fino por dentro da moldura, como passe-partout */
+.p-jornada-quadro::before{content:"";position:absolute;inset:12px;z-index:5;border-radius:17px;border:1px solid color-mix(in srgb,#fff 20%,transparent);pointer-events:none}
+/* tom quente por cima das fotos: une foto colorida e preto e branco na paleta da marca */
+.p-jornada-foto::before,.p-jornada-bloco-foto::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(165deg,var(--pj-acento),var(--cor) 55%,var(--cor-forte));mix-blend-mode:color;opacity:.36}
+.p-jornada-foto{position:absolute;inset:0;margin:0;z-index:1;clip-path:inset(100% 0 0 0)}
+.p-jornada-quadro.volta .p-jornada-foto{clip-path:inset(0 0 100% 0)}
+.p-jornada-foto img{width:100%;height:100%;object-fit:cover;transform:scale(1.13);transform-origin:var(--pj-foco,50% 40%)}
+.p-jornada-foto::after{content:"";position:absolute;inset:0;background:#0b0604;opacity:0;transition:opacity 1.1s}
+.p-jornada-quadro .p-jornada-foto.saindo{z-index:2;clip-path:inset(0)}
+.p-jornada-quadro .p-jornada-foto.saindo::after{opacity:.5}
+.p-jornada-quadro .p-jornada-foto.saindo img{transform:scale(1);transition:transform 1.4s var(--pj-ease)}
+.p-jornada-quadro .p-jornada-foto.ativa{z-index:3;clip-path:inset(0);transition:clip-path 1.15s cubic-bezier(.77,0,.18,1)}
+.p-jornada-quadro .p-jornada-foto.ativa img{transform:scale(1.02);transition:transform 7s cubic-bezier(.2,.6,.2,1)}
+.p-jornada-semfoto{position:absolute;inset:0;display:grid;place-items:center;font:800 clamp(90px,14vw,200px)/1 var(--titulo);letter-spacing:-.05em;color:color-mix(in srgb,var(--pj-acento) 30%,transparent);
+  background:radial-gradient(80% 70% at 30% 20%,color-mix(in srgb,var(--cor) 55%,transparent),transparent),var(--cor-forte)}
+
+/* cartão de vidro sobre a foto */
+.p-jornada-vidro{position:absolute;left:24px;right:24px;bottom:24px;z-index:6;display:grid;padding:20px 22px 22px;border-radius:18px;
+  background:color-mix(in srgb,var(--cor-forte) 40%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.35);backdrop-filter:blur(18px) saturate(1.35);
+  border:1px solid color-mix(in srgb,#fff 17%,transparent);box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 14%,transparent),0 20px 40px -20px rgba(0,0,0,.5)}
+.p-jornada-cartao{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .45s,transform .6s var(--pj-ease),visibility 0s .6s}
+.p-jornada-cartao.ativa{opacity:1;visibility:visible;transform:none;transition:opacity .7s .28s,transform .8s var(--pj-ease) .28s,visibility 0s}
+.p-jornada-cartao-topo{display:flex;justify-content:space-between;gap:12px;font:600 10.5px/1.3 var(--texto);letter-spacing:.2em;text-transform:uppercase;color:var(--pj-acento)}
+.p-jornada-cartao-topo span+span{color:color-mix(in srgb,#fff 62%,transparent);letter-spacing:.12em}
+.p-jornada-cartao h3{font:var(--peso-titulo,700) clamp(19px,1.6vw,24px)/1.15 var(--titulo);letter-spacing:-.02em;color:#fff;margin:10px 0 8px}
+.p-jornada-cartao p{font-size:clamp(13.5px,1vw,15px);line-height:1.55;color:color-mix(in srgb,#fff 84%,transparent)}
+
+/* régua das fases */
+.p-jornada-regua{position:relative;display:grid;grid-template-columns:repeat(var(--pj-n),minmax(0,1fr));margin-top:30px}
+.p-jornada-regua::before{content:"";position:absolute;top:22px;left:calc(50% / var(--pj-n));right:calc(50% / var(--pj-n));height:1px;background:var(--pj-linha)}
+.p-jornada-regua>i{position:absolute;top:22px;left:calc(50% / var(--pj-n));height:1px;width:calc((100% - 100% / var(--pj-n)) * var(--pj-k,0));
+  background:linear-gradient(90deg,color-mix(in srgb,var(--pj-acento) 35%,transparent),var(--pj-acento));transition:width .9s var(--pj-ease)}
+.p-jornada-regua button{all:unset;position:relative;z-index:1;cursor:pointer;display:grid;justify-items:center;gap:11px;text-align:center;font:600 10px/1.3 var(--texto);letter-spacing:.17em;text-transform:uppercase;color:var(--pj-apagado);transition:color .5s;padding:0 2px}
+.p-jornada-conta{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;overflow:hidden;background:color-mix(in srgb,var(--cor-forte) 70%,#000);
+  box-shadow:0 0 0 1px color-mix(in srgb,#fff 20%,transparent);transform:scale(.8);transition:transform .7s var(--pj-ease),box-shadow .6s}
+.p-jornada-conta img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.85);opacity:.6;transition:opacity .6s,filter .6s}
+.p-jornada-conta::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--cor);mix-blend-mode:color;opacity:.4;pointer-events:none}
+.p-jornada-conta b{font:600 11px/1 var(--texto);letter-spacing:.06em;color:var(--pj-acento)}
+.p-jornada-regua button.passou .p-jornada-conta{box-shadow:0 0 0 1px var(--pj-acento)}
+.p-jornada-regua button.passou .p-jornada-conta img{opacity:.8}
+.p-jornada-regua button.ativa{color:var(--pj-claro)}
+.p-jornada-regua button.ativa .p-jornada-conta{transform:none;box-shadow:0 0 0 2px var(--pj-acento),0 0 0 7px color-mix(in srgb,var(--pj-acento) 16%,transparent),0 0 30px 4px color-mix(in srgb,var(--pj-acento) 45%,transparent)}
+.p-jornada-regua button.ativa .p-jornada-conta img{opacity:1;filter:none}
+.p-jornada-regua button:hover{color:color-mix(in srgb,#fff 80%,transparent)}
+.p-jornada-regua button:hover .p-jornada-conta img{opacity:.9}
+.p-jornada-regua button:focus-visible{outline:2px solid var(--pj-acento);outline-offset:4px;border-radius:6px}
+
+/* blocos empilhados (padrão) */
+.p-jornada-pilha{padding:clamp(34px,5vw,56px) 0 clamp(76px,10vw,128px)}
+.p-jornada-blocos{position:relative;display:grid;gap:46px;padding-left:34px}
+.p-jornada-risco{position:absolute;left:6px;top:8px;bottom:8px;width:1px;background:var(--pj-linha)}
+.p-jornada-risco i{position:absolute;left:0;top:0;width:1px;height:calc(var(--pj-feito,0) * 100%);background:linear-gradient(180deg,color-mix(in srgb,var(--pj-acento) 45%,transparent),var(--pj-acento));transition:height .25s linear}
+.p-jornada-bloco{position:relative;display:grid;gap:20px;min-width:0;align-content:start}
+.p-jornada-marca{position:absolute;left:-34px;top:1px;width:13px;height:13px;border-radius:50%;background:var(--cor-forte);border:1px solid color-mix(in srgb,#fff 30%,transparent);transition:background .5s,border-color .5s,box-shadow .5s}
+.p-jornada-bloco.passou .p-jornada-marca{background:var(--pj-acento);border-color:var(--pj-acento);box-shadow:0 0 0 5px color-mix(in srgb,var(--pj-acento) 18%,transparent),0 0 20px color-mix(in srgb,var(--pj-acento) 55%,transparent)}
+.p-jornada-bloco-foto{position:relative;margin:0;aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:color-mix(in srgb,var(--cor-forte) 70%,#000);box-shadow:0 34px 60px -34px rgba(0,0,0,.8),0 0 0 1px color-mix(in srgb,#fff 8%,transparent)}
+.p-jornada-bloco-foto img{width:100%;height:100%;object-fit:cover}
+.p-jornada-bloco-foto::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.28),transparent 30%)}
+.p-jornada-bloco-texto small{display:flex;align-items:center;font:600 11px/1.3 var(--texto);letter-spacing:.2em;text-transform:uppercase;color:var(--pj-acento)}
+.p-jornada-bloco-texto small b{font-weight:600;letter-spacing:.06em;color:var(--pj-claro);font-variant-numeric:tabular-nums;display:inline-flex;align-items:center}
+.p-jornada-bloco-texto small b::after{content:"";width:22px;height:1px;margin:0 12px;background:color-mix(in srgb,var(--pj-acento) 60%,transparent)}
+.p-jornada-bloco-texto h3{font:var(--peso-titulo,700) clamp(22px,2vw,26px)/1.15 var(--titulo);letter-spacing:-.02em;color:var(--pj-claro);margin:9px 0 9px}
+.p-jornada-bloco-texto p{font-size:16px;line-height:1.6;color:var(--pj-texto)}
+.p-jornada-acoes-pilha{margin-top:46px;padding-left:34px}
+@media (min-width:901px){
+  .p-jornada-blocos{grid-template-columns:repeat(var(--pj-n),minmax(0,1fr));gap:clamp(18px,2.2vw,32px);padding:38px 0 0}
+  .p-jornada-risco{left:0;right:0;top:6px;bottom:auto;width:auto;height:1px}
+  .p-jornada-risco i{width:calc(var(--pj-feito,0) * 100%);height:1px;transition:width 1.6s var(--pj-ease);background:linear-gradient(90deg,color-mix(in srgb,var(--pj-acento) 45%,transparent),var(--pj-acento))}
+  .p-jornada-marca{left:calc(50% - 6.5px);top:-38px}
+  /* blocos pares descem: o caminho ganha ritmo e cada ponto pendura a sua foto por um fio */
+  .p-jornada-bloco{--pj-desce:0px}
+  .p-jornada-bloco:nth-child(odd){--pj-desce:clamp(40px,5vw,76px);padding-top:var(--pj-desce)}
+  .p-jornada-bloco::before{content:"";position:absolute;left:50%;top:-25px;width:1px;height:calc(25px + var(--pj-desce));
+    background:linear-gradient(180deg,var(--pj-acento),color-mix(in srgb,var(--pj-acento) 15%,transparent))}
+  .p-jornada-bloco-texto p{font-size:15px}
+  .p-jornada-acoes-pilha{padding-left:0}
+}
+
+/* entradas suaves de 16 px (só depois que o JS da peça ligou) */
+.p-jornada.pj-pronta [data-pj-surge]{transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--pj-i,0) * 90ms)}
+.p-jornada.pj-pronta [data-pj-surge]:not(.pj-visivel){opacity:0;transform:translateY(16px)}
+
+/* a cena presa: só no computador com tela alta, com movimento liberado e fora da foto da página pronta */
+@media (min-width:901px) and (min-height:561px) and (prefers-reduced-motion:no-preference){
+  html:not(.sem-animacao) .p-jornada-trilho{height:calc(100vh + var(--pj-n) * 72vh);height:calc(100svh + var(--pj-n) * 72svh)}
+  html:not(.sem-animacao) .p-jornada-palco{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;padding:calc(var(--pj-topo) + 1.5vh) 0 2vh;overflow:hidden}
+  html:not(.sem-animacao) .p-jornada-palco::before{inset:0;-webkit-mask-image:none;mask-image:none}
+  html:not(.sem-animacao) .p-jornada-grade{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(44px,6vw,110px);align-items:center}
+  html:not(.sem-animacao) .p-jornada-lista{display:block}
+  html:not(.sem-animacao) .p-jornada-arte{display:block;width:min(520px,calc((100vh - var(--pj-topo) - 186px) * .8),42vw);margin-right:20px}
+  html:not(.sem-animacao) .p-jornada-pilha{display:none}
+}
+@media (max-width:900px),(max-height:560px),(prefers-reduced-motion:reduce){
+  .p-jornada-texto>.p-jornada-acoes{display:none}
+}
+html.sem-animacao .p-jornada-texto>.p-jornada-acoes{display:none}
+@media (max-width:900px){
+  .p-jornada-palco{padding-top:clamp(64px,16vw,96px)}
+  .p-jornada h2{font-size:clamp(29px,8.2vw,40px)}
+}
+
+/* foto da página pronta e quem pede menos movimento: tudo no estado final */
+html.sem-animacao .p-jornada [data-pj-surge]{opacity:1!important;transform:none!important;transition:none!important}
+html.sem-animacao .p-jornada{--pj-feito:1!important}
+html.sem-animacao .p-jornada-bloco .p-jornada-marca{background:var(--pj-acento);border-color:var(--pj-acento);box-shadow:0 0 0 5px color-mix(in srgb,var(--pj-acento) 18%,transparent)}
+html.sem-animacao .p-jornada-traco path{stroke-dashoffset:0!important;transition:none!important}
+html.sem-animacao .p-jornada-risco i{transition:none!important}
+@media (prefers-reduced-motion:reduce){
+  .p-jornada [data-pj-surge]{opacity:1!important;transform:none!important;transition:none!important}
+  .p-jornada{--pj-feito:1!important}
+  .p-jornada-bloco .p-jornada-marca{background:var(--pj-acento);border-color:var(--pj-acento)}
+  .p-jornada-traco path{stroke-dashoffset:0!important;transition:none!important}
+}

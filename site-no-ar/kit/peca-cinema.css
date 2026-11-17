@@ -1,0 +1,193 @@
+/* Peça cinema · abertura escura de estúdio. Tudo começa por .p-cinema ou body.p-cinema-ativa. Carregue depois do mestre.css e do tom. */
+/* Composição de capa de revista: a palavra gigante no alto, de ponta a ponta; a pessoa entra por baixo dela e encobre só o pé das letras;
+   o texto embaixo, à esquerda; a luz de estúdio atrás da cabeça. O JS mede a palavra e põe --p-cinema-gig-fit para ela caber na largura. */
+.p-cinema{--p-cinema-topo:0px;--p-cinema-ar:.8;--p-cinema-k:0;--p-cinema-creme:#fff6ee;--p-cinema-escuro:color-mix(in srgb,var(--cor-forte) 70%,#000);
+  --p-cinema-borda:max(24px,calc((100% - 1240px) / 2));
+  --p-cinema-gig:var(--p-cinema-gig-fit,clamp(90px,calc((min(100vw,1288px) - 48px) / (var(--p-cinema-letras,7) * .58)),250px));
+  --p-cinema-cabeca:calc(var(--p-cinema-topo) + var(--p-cinema-gig) * .62);
+  position:relative;isolation:isolate;overflow:hidden;overflow:clip;color:var(--p-cinema-creme);display:grid;align-items:end;
+  min-height:clamp(640px,100svh,1040px);
+  background:radial-gradient(120% 95% at 72% 46%,color-mix(in srgb,var(--cor-forte) 84%,var(--cor)) 0%,var(--cor-forte) 50%,var(--p-cinema-escuro) 100%)}
+.m-abertura.p-cinema{padding:calc(var(--p-cinema-topo) + var(--p-cinema-gig) * .92 + clamp(18px,3vh,34px)) 0 clamp(34px,5.5vh,64px)}
+.p-cinema.p-cinema-sob-topo{margin-top:calc(-1 * var(--p-cinema-topo))}
+
+/* luz de estúdio atrás da cabeça, que respira devagar e escurece com a rolagem */
+.p-cinema-luz{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:calc(1 - var(--p-cinema-k) * .85)}
+.p-cinema-luz i{position:absolute;inset:0;transition:opacity 1.8s cubic-bezier(.2,.7,.2,1),transform 2.2s cubic-bezier(.2,.7,.2,1)}
+.p-cinema-luz i::before{content:"";position:absolute;left:var(--p-cinema-luz-x,69%);top:var(--p-cinema-luz-y,50%);width:min(96vw,1240px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--cor) 88%,#ffd9b8 12%) 0%,color-mix(in srgb,var(--cor) 58%,transparent) 30%,color-mix(in srgb,var(--cor) 18%,transparent) 62%,transparent 100%);
+  filter:blur(24px);animation:p-cinema-respira 9s ease-in-out infinite alternate}
+/* recorte de luz mais clara bem atrás da cabeça, como um rebatedor */
+.p-cinema-luz i::after{content:"";position:absolute;left:var(--p-cinema-luz-x,69%);top:calc(var(--p-cinema-luz-y,50%) - 9%);width:min(36vw,500px);aspect-ratio:1;translate:-50% -50%;border-radius:50%;
+  background:radial-gradient(closest-side,color-mix(in srgb,var(--cor-2) 50%,transparent),transparent);mix-blend-mode:screen;opacity:.5;filter:blur(30px);animation:p-cinema-respira 11s ease-in-out -4s infinite alternate-reverse}
+@keyframes p-cinema-respira{from{scale:1;opacity:.84}to{scale:1.07;opacity:1}}
+
+/* a palavra gigante: no alto, de ponta a ponta da coluna, entre a luz e a pessoa; desliza na horizontal com a rolagem */
+.p-cinema-gigante{position:absolute;z-index:1;left:0;right:0;top:calc(var(--p-cinema-topo) + var(--p-cinema-gig) * -.06);pointer-events:none;white-space:nowrap;
+  padding-inline:var(--p-cinema-borda);translate:calc(var(--p-cinema-k) * -14vw) 0}
+.p-cinema-gigante span{display:inline-block;margin-left:-.045em;font:800 var(--p-cinema-gig)/1 var(--titulo);letter-spacing:-.06em;padding:.02em .06em .04em 0;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--cor-2) 58%,transparent) 8%,color-mix(in srgb,var(--cor-2) 34%,transparent) 52%,color-mix(in srgb,var(--cor-2) 16%,transparent) 88%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  transition:transform 1.7s cubic-bezier(.2,.75,.2,1) .2s,opacity 1.4s ease .2s,clip-path 1.7s cubic-bezier(.2,.75,.2,1) .2s}
+
+/* sombra à esquerda e embaixo para o texto respirar, por baixo da pessoa */
+.p-cinema-vinheta{position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--p-cinema-escuro) 70%,transparent) 0%,color-mix(in srgb,var(--p-cinema-escuro) 30%,transparent) 40%,transparent 62%),
+             linear-gradient(0deg,color-mix(in srgb,var(--p-cinema-escuro) 76%,transparent) 0%,transparent 30%)}
+
+/* a pessoa: ancorada embaixo, à direita, com a cabeça encostando no pé da palavra; as bordas cortadas somem no escuro */
+.p-cinema-pessoa{--p-cinema-lmax:min(48vw,700px);position:absolute;z-index:3;bottom:0;right:calc(var(--p-cinema-borda) - 1vw);
+  height:min(calc(100% - var(--p-cinema-cabeca)),calc(var(--p-cinema-lmax) / var(--p-cinema-ar)));aspect-ratio:var(--p-cinema-ar);
+  translate:0 calc(var(--p-cinema-k) * 14%)}
+.p-cinema-foto{display:block;width:100%;height:100%;max-width:none;object-fit:contain;transform-origin:50% 100%;
+  filter:saturate(.92) contrast(1.05) brightness(.96) sepia(.05);
+  --p-cinema-mascara:linear-gradient(90deg,transparent 0,rgba(0,0,0,.55) 7%,#000 19%,#000 81%,rgba(0,0,0,.55) 93%,transparent 100%),
+    linear-gradient(180deg,transparent 0,rgba(0,0,0,.6) 6%,#000 15%,#000 74%,rgba(0,0,0,.5) 88%,transparent 99%),
+    radial-gradient(80% 92% at 50% 44%,#000 62%,transparent 100%);
+  -webkit-mask-image:var(--p-cinema-mascara);-webkit-mask-composite:source-in;
+  mask-image:var(--p-cinema-mascara);mask-composite:intersect;
+  transition:transform 1.6s cubic-bezier(.2,.75,.2,1) .45s,opacity 1.1s ease .45s}
+
+/* fichas de vidro escuro, coladas na pessoa, na metade de baixo, longe do rosto e sempre dentro da tela */
+.p-cinema-fichas{list-style:none;margin:0;padding:0}
+.p-cinema-ficha{position:absolute;z-index:1;display:grid;gap:4px;width:max-content;max-width:min(260px,40vw);padding:15px 20px 16px 24px;border-radius:18px;
+  background:linear-gradient(150deg,color-mix(in srgb,var(--cor-forte) 62%,transparent),color-mix(in srgb,var(--cor-forte) 34%,transparent));
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:0 30px 60px -26px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,240,225,.14);font:500 12.5px/1.38 var(--texto);color:color-mix(in srgb,var(--p-cinema-creme) 70%,transparent);
+  animation:p-cinema-boia 8s ease-in-out infinite alternate;transition:opacity .9s ease,transform 1.1s cubic-bezier(.2,.75,.2,1)}
+.p-cinema-ficha::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(150deg,rgba(255,240,225,.62),rgba(255,240,225,.08) 40%,rgba(255,240,225,.03) 62%,color-mix(in srgb,var(--cor-2) 72%,transparent));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+.p-cinema-ficha::after{content:"";position:absolute;left:12px;top:17px;bottom:17px;width:2px;border-radius:2px;background:linear-gradient(180deg,var(--cor-2),color-mix(in srgb,var(--cor-2) 18%,transparent))}
+.p-cinema-ficha b{font:700 15.5px/1.2 var(--titulo);letter-spacing:-.02em;color:var(--p-cinema-creme)}
+.p-cinema-ficha.a{right:2%;top:68%;transition-delay:1.9s}
+.p-cinema-ficha.b{left:-6%;bottom:9%;animation-delay:-3s;transition-delay:2.1s}
+.p-cinema-ficha.c{right:2%;top:46%;animation-delay:-5s;transition-delay:2.3s}
+@keyframes p-cinema-boia{from{translate:0 -5px}to{translate:0 7px}}
+
+/* escurece a cena conforme a página rola */
+.p-cinema-sombra{position:absolute;inset:0;z-index:5;pointer-events:none;background:linear-gradient(180deg,color-mix(in srgb,var(--p-cinema-escuro) 50%,transparent),var(--p-cinema-escuro));opacity:calc(var(--p-cinema-k) * .8)}
+
+/* texto embaixo, à esquerda */
+.p-cinema-dentro{position:relative;z-index:6;width:min(1240px,100% - 48px);margin-inline:auto}
+.p-cinema-texto{width:min(600px,46%);translate:0 calc(var(--p-cinema-k) * -80px);opacity:calc(1 - var(--p-cinema-k) * 1.2)}
+.p-cinema-olho{display:inline-flex;align-items:center;gap:12px;margin:0;text-wrap:balance;font:600 12px/1.4 var(--texto);letter-spacing:.18em;text-transform:uppercase;color:var(--cor-2)}
+.p-cinema-olho::before{content:"";flex:none;width:30px;height:1px;background:currentColor;transform-origin:0 50%;transition:transform 1s cubic-bezier(.2,.7,.2,1) .6s}
+.p-cinema h1{margin:18px 0 22px;font-size:clamp(40px,5vw,76px);line-height:1;letter-spacing:-.045em;color:var(--p-cinema-creme);text-wrap:balance}
+.p-cinema h1 em{color:var(--cor-2)}
+.p-cinema h1 .m-palavra>span{transition-duration:1.1s;transition-delay:calc(var(--n,0) * 70ms + .75s)}
+.p-cinema .m-traco path{stroke:var(--cor-2);opacity:.9;transition-delay:1.75s}
+.p-cinema-sub{margin:0 0 30px;max-width:31em;font-size:clamp(16px,1.25vw,18.5px);line-height:1.6;color:color-mix(in srgb,var(--p-cinema-creme) 74%,transparent)}
+.p-cinema-acoes{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.p-cinema .m-botao{transition:transform .25s,box-shadow .3s,background .25s,border-color .25s,translate .45s cubic-bezier(.2,.7,.2,1)}
+.p-cinema .p-cinema-principal{box-shadow:0 20px 44px -18px color-mix(in srgb,var(--cor) 90%,#000),inset 0 1px 0 rgba(255,255,255,.22)}
+.p-cinema .m-botao.claro{color:var(--p-cinema-creme);border-color:color-mix(in srgb,var(--p-cinema-creme) 26%,transparent);background:color-mix(in srgb,var(--p-cinema-creme) 4%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.p-cinema .m-botao.claro:hover{background:color-mix(in srgb,var(--p-cinema-creme) 11%,transparent);border-color:color-mix(in srgb,var(--p-cinema-creme) 45%,transparent)}
+.p-cinema-olho,.p-cinema-sub,.p-cinema-acoes,.p-cinema-provas li{transition:opacity .9s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.p-cinema-provas{position:relative;list-style:none;display:grid;grid-template-columns:repeat(var(--p-cinema-n,3),minmax(0,1fr));margin:clamp(26px,4.4vh,44px) 0 0;padding:18px 0 0}
+.p-cinema-provas::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;transform-origin:0 50%;transition:transform 1.5s cubic-bezier(.2,.7,.2,1) 1.4s;
+  background:linear-gradient(90deg,color-mix(in srgb,var(--cor-2) 75%,transparent),color-mix(in srgb,var(--p-cinema-creme) 14%,transparent) 55%,transparent)}
+.p-cinema-provas li{padding-right:16px;font-size:13px;line-height:1.38;color:color-mix(in srgb,var(--p-cinema-creme) 58%,transparent)}
+.p-cinema-provas li+li{padding-left:20px;border-left:1px solid color-mix(in srgb,var(--p-cinema-creme) 11%,transparent)}
+.p-cinema-provas b{display:block;margin-bottom:5px;font:700 clamp(17px,1.4vw,20px)/1.1 var(--titulo);letter-spacing:-.02em;color:var(--p-cinema-creme)}
+.p-cinema-provas span{display:block}
+
+/* grão de filme */
+.p-cinema-grao{position:absolute;inset:-60px;z-index:7;pointer-events:none;opacity:.12;mix-blend-mode:overlay;background-size:170px 170px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='170' height='170'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 .96  0 0 0 0 .9  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23g)'/></svg>");
+  animation:p-cinema-grao 1.1s steps(6) infinite}
+@keyframes p-cinema-grao{0%{transform:translate(0,0)}20%{transform:translate(-22px,14px)}40%{transform:translate(18px,-26px)}60%{transform:translate(-12px,-8px)}80%{transform:translate(26px,20px)}100%{transform:translate(0,0)}}
+
+/* entrada em sequência: a luz acende, a palavra sobe de dentro da própria linha, a pessoa surge, o título entra, as fichas por último */
+.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-luz i{opacity:0;transform:scale(.82)}
+.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-gigante span{opacity:0;transform:translateY(26%);clip-path:inset(100% -5% -20% -5%)}
+.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-foto{opacity:0;transform:translateY(7%) scale(.94)}
+.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-olho,.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-sub,.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-acoes,.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-provas li{opacity:0;transform:translateY(16px)}
+.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-olho::before,.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-provas::before{transform:scaleX(0)}
+.p-cinema-arma:not(.p-cinema-ligou) .p-cinema-ficha{opacity:0;transform:translateY(16px) scale(.96)}
+.p-cinema-gigante span{clip-path:inset(-20% -5% -20% -5%)}
+.p-cinema-olho{transition-delay:.6s}.p-cinema-sub{transition-delay:1.2s}.p-cinema-acoes{transition-delay:1.35s}
+.p-cinema-provas li{transition-delay:1.55s}.p-cinema-provas li+li{transition-delay:1.65s}.p-cinema-provas li+li+li{transition-delay:1.75s}
+
+/* o topo do site fica transparente e claro em cima da abertura escura, e volta ao normal quando a página rola */
+body.p-cinema-ativa .m-topo{transition:background-color .4s,border-color .3s,box-shadow .3s,color .4s,-webkit-backdrop-filter .4s,backdrop-filter .4s}
+body.p-cinema-ativa .m-topo:not(.rolou){background-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;border-color:transparent;box-shadow:none;color:#fff6ee}
+body.p-cinema-ativa .m-topo:not(.rolou) .m-marca{color:#fff6ee}
+body.p-cinema-ativa .m-topo:not(.rolou) .m-marca small{color:rgba(255,246,238,.58)}
+body.p-cinema-ativa .m-topo:not(.rolou) .m-marca img{filter:brightness(0) invert(1)}
+body.p-cinema-ativa .m-topo:not(.rolou) .m-menu a,body.p-cinema-ativa .m-topo:not(.rolou) .m-entrar{color:rgba(255,246,238,.74)}
+body.p-cinema-ativa .m-topo:not(.rolou) .m-menu a:hover,body.p-cinema-ativa .m-topo:not(.rolou) .m-entrar:hover{color:#fff}
+body.p-cinema-ativa .m-topo:not(.rolou) .m-botao{background:#fff6ee;color:var(--cor-forte);border-color:#fff6ee}
+body.p-cinema-ativa .m-topo .m-menu a{white-space:nowrap}
+/* no modo foto o topo fica parado no alto, mas continua por cima da abertura */
+body.p-cinema-ativa:where(.sem-animacao *) .m-topo{position:relative;z-index:40}
+
+/* sem a pessoa: o texto fica no centro da luz */
+.p-cinema.sem-pessoa{--p-cinema-luz-x:50%}
+.p-cinema.sem-pessoa .p-cinema-texto{width:min(760px,100%)}
+
+/* pessoa estreita (foto em pé): as fichas b e c saem para a esquerda dela, no vão entre o texto e a pessoa */
+@media (min-width:1181px){
+  .p-cinema-estreita .p-cinema-ficha.b{left:auto;right:86%;bottom:11%}
+  .p-cinema-estreita .p-cinema-ficha.c{right:86%;top:47%}
+}
+
+/* tablet deitado e notebook pequeno */
+@media (max-width:1180px){
+  .p-cinema-pessoa{--p-cinema-lmax:54vw;right:max(4px,1vw)}
+  .p-cinema-texto{width:min(520px,48%)}
+  .p-cinema-ficha.a{right:3%}.p-cinema-ficha.c{right:3%}
+  body.p-cinema-ativa .m-topo .m-menu{gap:clamp(12px,1.6vw,20px)}
+  body.p-cinema-ativa .m-topo .m-menu a{font-size:14px}
+}
+@media (max-width:1180px) and (min-width:821px){
+  .p-cinema h1{font-size:clamp(40px,4.9vw,58px)}
+}
+
+/* celular e tablet em pé: a palavra no alto, a pessoa grande logo abaixo com a cabeça no pé das letras, o texto embaixo */
+@media (max-width:820px){
+  .p-cinema{min-height:0;align-items:start;--p-cinema-borda:16px;--p-cinema-gig:var(--p-cinema-gig-fit,clamp(60px,calc((100vw - 32px) / (var(--p-cinema-letras,7) * .58)),150px));
+    --p-cinema-cabeca:calc(var(--p-cinema-topo) + var(--p-cinema-gig) * .74);--p-cinema-luz-x:50%;--p-cinema-luz-y:calc(var(--p-cinema-topo) + var(--p-cinema-gig) * .6 + min(42vw,250px))}
+  .m-abertura.p-cinema{padding:0 0 44px;display:flow-root}
+  .p-cinema-luz i::before{width:150vw}.p-cinema-luz i::after{width:80vw}
+  .p-cinema-gigante{top:calc(var(--p-cinema-topo) + 2px);text-align:center;padding-inline:16px}
+  .p-cinema-gigante span{margin-left:0}
+  .p-cinema-vinheta{background:linear-gradient(0deg,var(--cor-forte) 0%,color-mix(in srgb,var(--cor-forte) 72%,transparent) 30%,transparent 56%)}
+  .p-cinema-pessoa{--p-cinema-lmax:min(90vw,460px);position:relative;right:auto;bottom:auto;margin:var(--p-cinema-cabeca) auto 0;
+    height:min(calc(var(--p-cinema-lmax) / var(--p-cinema-ar)),58svh,560px);translate:0 calc(var(--p-cinema-k) * 10%)}
+  .p-cinema-ficha{max-width:min(250px,62vw);padding:11px 15px 12px 21px;border-radius:15px}
+  .p-cinema-ficha::after{left:10px;top:13px;bottom:13px}
+  .p-cinema-ficha b{font-size:14px}
+  .p-cinema-ficha.a{left:auto;right:0;top:auto;bottom:8%}
+  .p-cinema-ficha.b,.p-cinema-ficha.c{display:none}
+  .p-cinema-dentro{width:calc(100% - 40px);margin-top:-14px}
+  .p-cinema-texto{width:100%;translate:none;opacity:1}
+  .p-cinema-olho{font-size:11px;letter-spacing:.13em;gap:10px}
+  .p-cinema-olho::before{width:22px}
+  .p-cinema h1{font-size:clamp(36px,10.6vw,56px);margin:14px 0 16px}
+  .p-cinema-sub{font-size:16px;margin-bottom:26px}
+  .p-cinema-acoes{flex-direction:column;align-items:stretch}
+  .p-cinema-acoes .m-botao{justify-content:center}
+  .p-cinema-provas{margin-top:32px;padding-top:18px}
+  .p-cinema-provas li{padding-right:10px;font-size:12px}
+  .p-cinema-provas li+li{padding-left:12px}
+  .p-cinema-provas b{font-size:16px}
+}
+@media (max-width:820px) and (min-width:560px){
+  .p-cinema-acoes{flex-direction:row}
+}
+
+/* movimento reduzido e modo foto do finalizador: tudo no estado final, sem esperar animação nem rolagem */
+@media (prefers-reduced-motion:reduce){
+  .p-cinema{--p-cinema-k:0!important}
+  .p-cinema-luz i::before,.p-cinema-luz i::after,.p-cinema-ficha,.p-cinema-grao{animation:none}
+  .p-cinema-luz i,.p-cinema-gigante span,.p-cinema-foto,.p-cinema-ficha,.p-cinema-olho,.p-cinema-sub,.p-cinema-acoes,.p-cinema-provas li{opacity:1!important;transform:none!important;transition:none!important}
+  .p-cinema-gigante span{clip-path:none!important}
+  .p-cinema-olho::before,.p-cinema-provas::before{transform:none!important;transition:none!important}
+}
+.sem-animacao .p-cinema{--p-cinema-k:0!important}
+.sem-animacao .p-cinema-luz i::before,.sem-animacao .p-cinema-luz i::after,.sem-animacao .p-cinema-ficha,.sem-animacao .p-cinema-grao{animation:none!important}
+.sem-animacao .p-cinema-luz i,.sem-animacao .p-cinema-gigante span,.sem-animacao .p-cinema-foto,.sem-animacao .p-cinema-ficha,.sem-animacao .p-cinema-olho,.sem-animacao .p-cinema-sub,.sem-animacao .p-cinema-acoes,.sem-animacao .p-cinema-provas li{opacity:1!important;transform:none!important;transition:none!important}
+.sem-animacao .p-cinema-gigante span{clip-path:none!important}
+.sem-animacao .p-cinema-olho::before,.sem-animacao .p-cinema-provas::before{transform:none!important;transition:none!important}
+.sem-animacao .p-cinema .m-botao{translate:none!important}

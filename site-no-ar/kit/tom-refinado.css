@@ -1,0 +1,10 @@
+/* Tom refinado: serifa de título encorpada (Gloock) com texto em Hanken Grotesk. Para profissionais que pedem elegância: saúde, estética, advocacia, arquitetura. Carregue depois do mestre.css. */
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Hanken+Grotesk:wght@400;500;600&display=swap');
+:root{--titulo:"Gloock",Georgia,serif;--texto:"Hanken Grotesk",system-ui,sans-serif;--peso-titulo:400;--aperto:-.012em;--raio:14px}
+h1{font-size:clamp(42px,5.4vw,80px);line-height:1.02}h2{font-size:clamp(32px,3.9vw,56px);line-height:1.05}h3{font-family:var(--texto);font-weight:600;letter-spacing:-.01em}
+h1 em,h2 em{font-style:normal}.m-olho{letter-spacing:.18em;font-size:11.5px}
+.m-botao{font-weight:500;letter-spacing:.005em}
+/* a serifa encorpada não aguenta letra apertada: as peças que apertam o espaço voltam ao normal neste tom */
+.p-mosaico .p-mosaico-topo .m-cabeca h2,.p-jornada h2,.p-orbita h2,.p-livros h2{letter-spacing:-.01em}
+.p-mosaico .p-mosaico-indice b{font-family:var(--texto);font-weight:600;letter-spacing:-.005em}
+.p-mosaico .p-mosaico-cartao h3{letter-spacing:-.01em}

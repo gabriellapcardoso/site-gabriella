@@ -8,7 +8,7 @@ Site pessoal de Gabriella Cardoso — landing page one-page em Next.js 14 com st
 > funcionando em https://site-gabriella-lyart.vercel.app, e serve de plano de volta.
 > **Um push na `main` daqui não muda o site do domínio.**
 >
-> - Como o site no ar é feito, publicado e revertido: `~/AI/sites-melhorados/gabriellapcardoso-com-br/COMO-PUBLICAR.md`
+> - Como o site no ar é feito, publicado e revertido: `site-no-ar/COMO-PUBLICAR.md`
 > - Infraestrutura, DNS e histórico: [`.claude/CLAUDE.md`](.claude/CLAUDE.md)
 
 **URL do site no ar**: https://gabriellapcardoso.com.br

@@ -1,0 +1,85 @@
+{
+  "nome": "Gabriella Cardoso",
+  "sub_marca": "Estratégia · Tráfego pago · IA",
+  "logo": "",
+  "titulo_da_aba": "Gabriella Cardoso · Estratégia, tráfego pago e IA",
+  "descricao": "Estrategista em comunicação, tráfego pago e inteligência artificial aplicada ao crescimento de negócios, lideranças políticas e marcas.",
+  "previa": false,
+  "favicon": { "svg": "img/favicon.svg", "png": "img/favicon-32.png", "apple": "img/apple-touch-icon.png" },
+  "url": "https://gabriellapcardoso.com.br/",
+  "og": { "imagem": "img/og.jpg", "largura": 1200, "altura": 630, "alt": "Gabriella Cardoso, estrategista em comunicação, tráfego pago e IA, ao lado do título do site" },
+  "tema": "escuro",
+  "tom": "direto",
+  "cores": ":root{ --cor:#bff208; --cor-2:#bff208; --cor-forte:#3a0a5a; --cor-suave:#2a1240; --fundo:#170a22; --papel:#20102e; --tinta:#f4f0f7; --tinta-suave:#b9a8c6; --sobre-cor:#1a1d08 }",
+  "css": ".p-cinema-gigante{display:none} .p-orbita .p-orbita-acao .m-botao.p-orbita-botao{background:var(--cor);color:var(--sobre-cor);border-color:var(--cor)} @media (min-width:821px){ .p-cinema{--p-cinema-luz-x:78%;--p-cinema-cabeca:calc(var(--p-cinema-topo) + 14px)} .m-abertura.p-cinema{padding-top:calc(var(--p-cinema-topo) + clamp(20px,4vh,44px))} } @media (min-width:1000px){ .p-cinema h1{font-size:clamp(38px,3.4vw,52px)} .p-cinema-texto{width:min(620px,48%)} } @media (max-width:820px){ .p-cinema{--p-cinema-cabeca:calc(var(--p-cinema-topo) + 6px);--p-cinema-luz-y:calc(var(--p-cinema-topo) + 15svh)} .p-cinema-fichas{display:none} .p-cinema-pessoa{height:min(calc(var(--p-cinema-lmax) / var(--p-cinema-ar)),48svh,430px)} .p-cinema h1{font-size:clamp(27px,7.6vw,38px);margin:10px 0 18px} .p-cinema-texto{display:flex;flex-direction:column} .p-cinema-olho{order:1} .p-cinema h1{order:2} .p-cinema-acoes{order:3} .p-cinema-sub{order:4;margin:22px 0 0} .p-cinema-provas{order:5} } #autoridade .m-pilha{aspect-ratio:auto} #autoridade .m-pilha img{aspect-ratio:4/5;object-position:50% 22%}",
+  "acao": { "texto": "Quero uma análise estratégica", "curto": "Falar com Gabriella", "link": "@whatsapp" },
+  "whatsapp": "@whatsapp",
+  "abertura": {
+    "tipo": "cinema",
+    "olho": "Autoridade estratégica",
+    "titulo": "Comunicação, tráfego e IA para transformar presença digital em *decisão estratégica*.",
+    "palavra": "decisão",
+    "sub": "Eu ajudo negócios, marcas, lideranças públicas e campanhas a saírem do improviso e construírem comunicação com método, dados, posicionamento e execução.",
+    "foto": "img/foto-02-recorte.webp", "alt": "Gabriella Cardoso, de óculos e blusa preta, com a mão apoiada no queixo, olhando para a câmera",
+    "segundo_botao": ["Conhecer minha atuação", "#sobre"],
+    "fichas": [["Performance", "crescimento com método"], ["Posicionamento", "leitura de território"], ["Automação", "inteligência artificial"]],
+    "provas": [["Desde 2015", "em marketing político"], ["Mandatos e campanhas", "comunicação pública na rotina real"], ["Tráfego, dados e IA", "integrados num só método"]]
+  },
+  "faixa": ["Posicionamento digital", "Tráfego político-eleitoral", "Campanhas para WhatsApp", "Geração de leads", "Leitura de território", "Agentes com IA"],
+  "secoes": [
+    { "tipo": "soma", "id": "sobre", "menu": "Sobre", "olho": "Por onde tudo começa",
+      "titulo": "Tráfego político precisa *entender como a política funciona*.",
+      "paragrafos": [
+        "Sou especialista em tráfego político-eleitoral, estratégia de comunicação e inteligência de dados para campanhas, e fundadora da aaagência.",
+        "Comecei cedo, dentro de campanhas eleitorais. Em 2015, virei assessora parlamentar de um vereador e cuidei também do marketing do mandato. Desde então passei por comunicação de prefeitura, conteúdo, eventos públicos, assessoria política, campanhas majoritárias e proporcionais, tráfego pago e coordenação de equipes de marketing.",
+        "Em 2024, atendi 17 campanhas em São Paulo e Minas Gerais: 2 prefeitos e 7 vereadores eleitos, além de 5 suplentes. Em 2026, fiz a gestão de tráfego de três campanhas para deputado federal e estadual, em Minas Gerais e no Rio de Janeiro, incluindo uma reeleição em que também coordenei o marketing.",
+        "Por isso, meu trabalho vai além de subir anúncios. Envolve leitura de território, análise de eleitorado, planejamento de conteúdo, segmentação, otimização, relatórios fáceis de entender e alinhamento com a realidade política de cada candidatura."
+      ],
+      "a": "Leitura política", "b": "Dados e tráfego", "resultado": "Campanha com método",
+      "botao": ["Quero uma análise estratégica", "@whatsapp"] },
+    { "tipo": "orbita", "id": "estrategia", "menu": "Estratégia", "olho": "Três frentes, um método",
+      "titulo": "Estratégia, tráfego e IA *trabalhando juntos*.",
+      "paragrafos": ["Hoje eu conecto estratégia de comunicação, tráfego pago, inteligência de dados, automação e IA para transformar decisões soltas em crescimento com método."],
+      "centro": "Método",
+      "itens": [
+        { "titulo": "Comunicação", "texto": "Posicionamento, narrativa, percepção pública, conteúdo e distribuição de mensagem para quem precisa comunicar com clareza." },
+        { "titulo": "Tráfego pago", "texto": "Planejamento, segmentação, campanhas e leitura de métricas para transformar investimento em conversas e oportunidade real." },
+        { "titulo": "IA aplicada", "texto": "Automação, análise, conteúdo e fluxos inteligentes para acelerar decisões e reduzir achismo." }
+      ] },
+    { "tipo": "cartoes", "id": "servicos", "menu": "Serviços", "olho": "Como posso ajudar",
+      "titulo": "Estratégia desenhada *para cada contexto*.",
+      "itens": [
+        { "icone": "pessoas", "titulo": "Lideranças públicas e campanhas", "texto": "Para políticos, mandatos, pré-candidatos e equipes. Posicionamento digital, comunicação de mandato, tráfego político-eleitoral, leitura de território e dados para decisão." },
+        { "icone": "sacola", "titulo": "Negócios e marcas locais", "texto": "Para negócios locais, prestadores de serviço e empresas. Campanhas para WhatsApp, geração de leads, captação de clientes e otimização por métricas." },
+        { "icone": "computador", "titulo": "IA para marketing e operação", "texto": "Para equipes, agências, empreendedores e lideranças. Automação de processos, IA para conteúdo e dados, agentes personalizados. Estratégia prática, sem hype." },
+        { "destaque": true, "titulo": "Não sabe por onde começar?", "texto": "Conta o seu momento e a gente descobre o caminho juntos.", "link": ["Falar com Gabriella", "@whatsapp"] }
+      ] },
+    { "tipo": "linhas", "id": "autoridade", "menu": "Autoridade", "layout": "lado", "olho": "Trajetória",
+      "titulo": "Experiência construída na *operação real*.",
+      "fotos": [["img/foto-02.jpg", "Gabriella Cardoso no escritório à noite, com caderno e notebook na mesa e a cidade iluminada ao fundo"]],
+      "itens": [
+        ["Desde 2015", "Atuação em marketing político."],
+        ["Mandatos e campanhas", "Experiência com comunicação pública no dia a dia."],
+        ["Liderança", "À frente de estratégia de marketing e comunicação."],
+        ["Integração", "Tráfego pago, conteúdo, dados e IA trabalhando juntos."],
+        ["Públicos diversos", "Políticos, negócios locais, marcas, empreendedores e equipes."],
+        ["Visão estratégica", "Uma leitura que une execução, análise e decisão."]
+      ] },
+    { "tipo": "citacao", "frase": "Tráfego pago não corrige comunicação fraca. IA não substitui estratégia. Crescimento exige contexto, método e execução.", "autor": "Gabriella Cardoso, estrategista" },
+    { "tipo": "processo", "id": "formas", "layout": "lado", "olho": "Formas de trabalho",
+      "titulo": "Escolha o modelo ideal *para o seu momento*.",
+      "texto": "Do diagnóstico pontual ao projeto completo.",
+      "itens": [
+        { "titulo": "Diagnóstico estratégico", "texto": "Análise de posicionamento, leitura de presença digital, diagnóstico de comunicação e tráfego, com recomendações práticas.", "nota": "Para entender os gargalos antes de investir mais" },
+        { "titulo": "Consultoria estratégica", "texto": "Planejamento de comunicação, estratégia de tráfego, IA aplicada à rotina, acompanhamento de métricas e priorização de ações.", "nota": "Para quem precisa de direção contínua" },
+        { "titulo": "Projeto personalizado", "texto": "Estratégia integrada, tráfego pago, conteúdo e posicionamento, inteligência de dados, automações com IA e plano de execução.", "nota": "Para campanhas, mandatos, marcas e operações" }
+      ] },
+    { "tipo": "duvidas", "olho": "Pergunta frequente", "titulo": "Você trabalha *só com política*?",
+      "itens": [["Você trabalha apenas com política?", "Não. Minha trajetória começou e se consolidou na política, mas minha atuação hoje conecta comunicação, tráfego pago, dados e IA para campanhas, mandatos, negócios locais, marcas e lideranças."]] },
+    { "tipo": "contato", "id": "contato", "menu": "Contato", "olho": "Vamos conversar", "titulo": "Fale comigo pelo *canal que preferir*.",
+      "dados": [["WhatsApp", "(31) 99482-2228", "@whatsapp"], ["E-mail", "gcardosomktdigital@gmail.com", "@email"], ["Instagram", "@gabriellapcardoso", "@instagram"], ["LinkedIn", "/in/gabriellapcardoso", "@linkedin"]] }
+  ],
+  "chamada": { "titulo": "O primeiro passo é *uma conversa*.", "texto": "Conta o que você precisa. A gente descobre juntos qual é o caminho.", "botao": "Conversar no WhatsApp" },
+  "rodape": { "texto": "Estratégia de comunicação · Tráfego pago · Inteligência artificial",
+    "colunas": [ ["Contato", [["WhatsApp", "@whatsapp"], ["E-mail", "@email"]]], ["Redes", [["Instagram", "@instagram"], ["LinkedIn", "@linkedin"]]] ] }
+}

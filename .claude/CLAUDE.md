@@ -6,7 +6,8 @@ Site pessoal de Gabriella Cardoso. Landing page one-page com Next.js 14 (static 
 > O site no ar é um site estático novo, gerado pela skill `mestre-dos-sites` e publicado no projeto
 > Vercel `gabriella-cardoso-site`. Este repositório (Next.js) continua intacto, como versão anterior
 > e plano de volta. **Pushes na `main` deste repositório não alteram mais o domínio.**
-> Como o site no ar é feito e publicado: `~/AI/sites-melhorados/gabriellapcardoso-com-br/COMO-PUBLICAR.md`.
+> Como o site no ar é feito e publicado: `site-no-ar/COMO-PUBLICAR.md` (pasta dentro deste repositório
+> desde 2026-11-17; antes ficava em `~/AI/sites-melhorados/gabriellapcardoso-com-br/`).
 > Resumo e histórico da troca: seções "Site no ar" e "Histórico" abaixo.
 
 ## Stack
@@ -134,7 +135,7 @@ O build gera a pasta `out/` com HTML estático — não há servidor Node em pro
 | Projeto Vercel | `gabriella-cardoso-site` (`prj_bptEeO2hDXXaeh75cvaIoDV8bgoz`) |
 | Endereço da Vercel | `gabriella-cardoso-site.vercel.app` |
 | Tipo | HTML estático de uma página, sem build, **sem repositório GitHub e sem deploy automático** |
-| Fonte do conteúdo | `~/AI/sites-melhorados/gabriellapcardoso-com-br/site.json` |
+| Fonte do conteúdo | `site-no-ar/site.json` (neste repositório) |
 | Montagem | skill `mestre-dos-sites` (`~/.claude/skills/mestre-dos-sites/`) |
 | Publicação | manual, por `vercel deploy --prod` (comando completo em `COMO-PUBLICAR.md`) |
 
