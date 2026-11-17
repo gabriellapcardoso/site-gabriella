@@ -150,6 +150,10 @@ de serviços, trajetória e contato. Todo o texto veio do site antigo. Ficaram d
 clientes (nomes fictícios: Acme Corp, Global Tech, Command Systems, Shield Security, Zap Energy,
 Sparkles AI) e quatro das cinco perguntas do FAQ (abriam sem resposta no site antigo).
 
+Mudanças depois da estreia (2026-11-17): a seção "Sobre" passou a contar a trajetória no marketing
+político (documento da própria Gabriella) e entrou a seção "Palestras", com foto de palco de 4 eventos
+e link para o post de cada um. Esses dois conteúdos não vieram do site antigo. Histórico abaixo.
+
 ### Voltar ao site anterior
 
 O `site-gabriella` continua com o último deploy de produção no ar em
@@ -277,15 +281,36 @@ IP `72.60.55.54` — serviços próprios rodando em Docker:
 Não verificado nessa data: teste em celular real; rastreamento do site novo pelo Google; aparência da
 prévia do link dentro do WhatsApp e do LinkedIn.
 
+### 2026-11-17 — Seções "Sobre" e "Palestras" no site no ar (mudança planejada)
+
+1. "Sobre" reescrita com o documento da Gabriella "Carreira no marketing político" (trajetória desde
+   2015, 17 campanhas em 2024, 3 campanhas para deputado em 2026). Os círculos passaram a dizer
+   "Leitura política + Dados e tráfego = Campanha com método".
+2. Seção nova "Palestras" (peça `mosaico`, entra no menu): Reload 2026 Sebrae Minas, Expo Favela
+   Minas, Neves Summit 2025 e Semana do MEI BH. Textos tirados das legendas dos posts dela no
+   Instagram; fotos escolhidas por ela; cada cartão abre o post do evento.
+3. Publicado no projeto `gabriella-cardoso-site`; conferido no domínio (HTML e as 6 peças novas com o
+   mesmo hash dos arquivos locais, HTTP 200).
+4. Correção no celular, publicada no mesmo dia: a faixa que corre ficava parada em aparelho com
+   "Reduzir movimento" (agora anda, mais devagar) e o círculo da seção "Sobre" alargava a página em
+   22 px (agora 375 px exatos). Conferido no domínio com Chromium em 375 px; **não** num iPhone real.
+
+Fontes: documento `Gabriella Cardoso - Carreira no marketing político.md` (Downloads), legendas de 10
+posts do Instagram dela (Reload, Neves Summit, Semana do MEI, Expo Favela) e as fotos de
+`~/Downloads/Fotos Palestras/Selecionadas`. A publicação passou a incluir `img/palestra-*.jpg` e
+`kit/peca-mosaico.{css,js}`.
+
+Detalhes, lista de arquivos para publicar e cópias anteriores: `COMO-PUBLICAR.md`.
+
 ---
 
 ## Pendências conhecidas
 
-### Abertas (2026-11-14)
+### Abertas (atualizado em 2026-11-17)
 
 - [ ] **~2026-11-17:** conferir no Search Console (Inspeção de URL) se o Google já rastreou o site novo.
 - [ ] Conferir a prévia do link no WhatsApp e no LinkedIn (tags e imagem no ar desde 2026-11-14; a aparência nos apps não foi vista).
-- [ ] Testar o site novo em celular de verdade.
+- [ ] Testar o site novo em celular de verdade. Em especial, num iPhone, a faixa que corre (corrigida em 2026-11-17, conferida só no Chromium simulado).
 - [ ] Ativar verificação em duas etapas na conta Vercel (só o dono faz).
 - [ ] `sitemap.xml` e `robots.txt`, se o site crescer.
 
