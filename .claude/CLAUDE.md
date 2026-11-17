@@ -295,6 +295,11 @@ prévia do link dentro do WhatsApp e do LinkedIn.
 4. Correção no celular, publicada no mesmo dia: a faixa que corre ficava parada em aparelho com
    "Reduzir movimento" (agora anda, mais devagar) e o círculo da seção "Sobre" alargava a página em
    22 px (agora 375 px exatos). Conferido no domínio com Chromium em 375 px; **não** num iPhone real.
+5. QA do site no ar (`/qa`, 2026-11-17): 2 defeitos. O menu do topo tinha perdido "Contato" quando
+   "Palestras" entrou (o montador aceita só 5 itens de menu e descartava o 6º em silêncio): corrigido
+   em `site-no-ar/site.json` (saiu "menu" da seção Autoridade) e **publicado no mesmo dia** (hash do HTML igual ao do domínio; menu com Sobre, Estratégia, Serviços, Palestras e Contato). O montador
+   da skill agora avisa quando descarta item de menu. Teste novo:
+   `node --test site-no-ar/menu.regression-1.test.mjs`. Relatório: `.gstack/qa-reports/` (fora do Git).
 
 Fontes: documento `Gabriella Cardoso - Carreira no marketing político.md` (Downloads), legendas de 10
 posts do Instagram dela (Reload, Neves Summit, Semana do MEI, Expo Favela) e as fotos de
@@ -312,11 +317,13 @@ Detalhes, lista de arquivos para publicar e cópias anteriores: `COMO-PUBLICAR.m
 - [ ] **~2026-11-17:** conferir no Search Console (Inspeção de URL) se o Google já rastreou o site novo.
 - [ ] Conferir a prévia do link no WhatsApp e no LinkedIn (tags e imagem no ar desde 2026-11-14; a aparência nos apps não foi vista).
 - [ ] Testar o site novo em celular de verdade. Em especial, num iPhone, a faixa que corre (corrigida em 2026-11-17, conferida só no Chromium simulado).
+- [ ] Links de texto do contato e do rodapé com 19 a 22 px de altura (pequenos para o toque; Baixa).
 - [ ] Ativar verificação em duas etapas na conta Vercel (só o dono faz).
 - [ ] `sitemap.xml` e `robots.txt`, se o site crescer.
 
 ### Resolvidas
 
+- [x] ~~Publicar a correção do menu (Contato)~~ — publicado em 2026-11-17 e conferido no domínio (HTTP 200, hash igual, menu com Contato)
 - [x] ~~Verificar e-mail após propagação DNS~~ — confirmado em 2026-06-25 (MX mx1/mx2.hostinger.com propagados via Vercel DNS)
 - [x] ~~Testar subdomínios do VPS~~ — confirmado em 2026-06-25 (n8n e demais resolvendo para `72.60.55.54`)
 - [x] ~~Links do Footer~~ — resolvido em 2026-06-25 (Instagram, LinkedIn, WhatsApp e E-mail preenchidos em `Footer.tsx`)

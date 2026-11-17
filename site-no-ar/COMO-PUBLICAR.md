@@ -119,6 +119,10 @@ fictícios (Acme Corp, Global Tech etc.). Se um dia voltar a ele, trocar ou tira
   escuro. Há uma regra no `css` do `site.json` que força o verde-limão. Medido em todos os botões
   (mínimo 11,6; o recomendado é 4,5).
 - **Foto em "Autoridade":** moldura vertical 4:5 para não cortar os olhos.
+- **Menu do topo: no máximo 5 itens** (2026-11-17). Hoje: Sobre, Estratégia, Serviços, Palestras e
+  Contato. A seção Autoridade ficou sem "menu" para abrir espaço. Antes, o 6º item era descartado
+  em silêncio (foi assim que o Contato sumiu); o montador agora avisa. Teste:
+  `node --test site-no-ar/menu.regression-1.test.mjs`, a partir da raiz do repositório.
 - **Faixa que corre (2026-11-17):** o kit parava a faixa quando o aparelho pede "Reduzir movimento"
   (Ajustes > Acessibilidade > Movimento). A pedido da Gabriella, a faixa anda nesse caso também, mais
   devagar (70 s por volta em vez de 38 s). Regra no `css` do `site.json`.

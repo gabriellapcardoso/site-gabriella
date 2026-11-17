@@ -54,7 +54,7 @@
         { "icone": "computador", "titulo": "IA para marketing e operação", "texto": "Para equipes, agências, empreendedores e lideranças. Automação de processos, IA para conteúdo e dados, agentes personalizados. Estratégia prática, sem hype." },
         { "destaque": true, "titulo": "Não sabe por onde começar?", "texto": "Conta o seu momento e a gente descobre o caminho juntos.", "link": ["Falar com Gabriella", "@whatsapp"] }
       ] },
-    { "tipo": "linhas", "id": "autoridade", "menu": "Autoridade", "layout": "lado", "olho": "Trajetória",
+    { "tipo": "linhas", "id": "autoridade", "layout": "lado", "olho": "Trajetória",
       "titulo": "Experiência construída na *operação real*.",
       "fotos": [["img/foto-02.jpg", "Gabriella Cardoso no escritório à noite, com caderno e notebook na mesa e a cidade iluminada ao fundo"]],
       "itens": [
