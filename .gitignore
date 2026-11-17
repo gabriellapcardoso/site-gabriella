@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# site no ar (site-no-ar/): pacote gerado pelo finalizador, refeito a cada montagem
+/site-no-ar/site-novo.zip

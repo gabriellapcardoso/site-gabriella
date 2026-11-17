@@ -1,0 +1,3 @@
+/* Tom acolhedor: par de fontes e ajustes de desenho. Carregue depois do mestre.css. */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap');
+:root{--titulo:"Fraunces",Georgia,serif;--texto:"Inter",system-ui,sans-serif;--peso-titulo:500;--aperto:-.018em;--raio:22px}

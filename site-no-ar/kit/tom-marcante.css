@@ -1,0 +1,4 @@
+/* Tom marcante: par de fontes e ajustes de desenho. Carregue depois do mestre.css. */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600&display=swap');
+:root{--titulo:"Bricolage Grotesque",system-ui,sans-serif;--texto:"Inter",system-ui,sans-serif;--peso-titulo:700;--aperto:-.04em;--raio:10px}
+h1 em,h2 em{font-style:normal}.m-corre span,.m-cartao .m-num{font-style:normal;font-weight:600}h1{font-size:clamp(44px,6.6vw,96px);line-height:.98}h2{line-height:1.02}.m-botao{border-radius:12px}.m-moldura img{border-radius:var(--raio)}.m-moldura::before,.m-moldura::after{border-radius:var(--raio)}

@@ -1,0 +1,8 @@
+/* Tom moderno: título sem serifa, firme e limpo (profissionais de saúde, consultórios, serviços). Carregue depois do mestre.css. */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=Inter:wght@400;500;600&display=swap');
+:root{--titulo:"Plus Jakarta Sans",system-ui,sans-serif;--texto:"Inter",system-ui,sans-serif;--peso-titulo:700;--aperto:-.035em;--raio:20px}
+h1{font-size:clamp(38px,5vw,70px);line-height:1.04}h2{font-size:clamp(29px,3.4vw,48px);line-height:1.08}h3{letter-spacing:-.02em}
+h1 em,h2 em{font-style:normal}.m-corre span{font-style:normal;font-weight:600}.m-cartao .m-num{font-style:normal;font-weight:700}
+.m-citacao blockquote{font-weight:600;letter-spacing:-.03em;line-height:1.22}.m-orbita .roda i,.m-soma-arte i,.m-ficha b,.m-linhas b,.m-medida-arte .miolo b{font-weight:700;letter-spacing:-.03em}
+.m-medida-arte .miolo b{font-weight:800}.m-numeros b{font-weight:800}
+.m-orbita .roda i{font-size:clamp(11.5px,3.1cqw,15.5px);line-height:1.15;padding:0 9%;hyphens:manual;overflow-wrap:normal}.m-orbita .centro{font-weight:700;letter-spacing:-.03em}

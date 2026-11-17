@@ -1,0 +1,4 @@
+/* Tom classico: par de fontes e ajustes de desenho. Carregue depois do mestre.css. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
+:root{--titulo:"DM Serif Display",Georgia,serif;--texto:"DM Sans",system-ui,sans-serif;--peso-titulo:400;--aperto:-.01em;--raio:6px}
+.m-botao{border-radius:6px}.m-moldura img{border-radius:var(--raio)}.m-olho{letter-spacing:.22em}
