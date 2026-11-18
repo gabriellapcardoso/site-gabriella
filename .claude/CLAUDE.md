@@ -316,7 +316,7 @@ Detalhes, lista de arquivos para publicar e cópias anteriores: `COMO-PUBLICAR.m
 
 - [ ] **~2026-11-17:** conferir no Search Console (Inspeção de URL) se o Google já rastreou o site novo.
 - [ ] Conferir a prévia do link no WhatsApp e no LinkedIn (tags e imagem no ar desde 2026-11-14; a aparência nos apps não foi vista).
-- [ ] Testar o site novo em celular de verdade. Em especial, num iPhone, a faixa que corre (corrigida em 2026-11-17, conferida só no Chromium simulado).
+- [x] ~~Testar o site novo em celular de verdade. Em especial, num iPhone, a faixa que corre~~ — conferido pela Gabriella em iPhone em 2026-11-17: faixa animada e botões funcionando.
 - [ ] Links de texto do contato e do rodapé com 19 a 22 px de altura (pequenos para o toque; Baixa).
 - [ ] Ativar verificação em duas etapas na conta Vercel (só o dono faz).
 - [ ] `sitemap.xml` e `robots.txt`, se o site crescer.
